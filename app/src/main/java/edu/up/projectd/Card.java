@@ -2,6 +2,7 @@ package edu.up.projectd;
 
 import android.media.Image;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -54,6 +55,10 @@ public class Card {
     public static List<String> getValidFaceNames() {
         return Arrays.asList("2","3","4","5","6","7","8","9","10","jack","queen","king","ace");
     }
+    /*public static ArrayList<Integer> getValidSuits() {
+        r
+    }*/
+
 
     /**
      *
