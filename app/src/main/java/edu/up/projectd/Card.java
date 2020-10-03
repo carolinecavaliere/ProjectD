@@ -7,72 +7,68 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Card {
-    private String name;
     private int suit;
     private int rank;
     //private Image image;
 
-    // getter for name
-    public String getName() {
-        return name;
-    }
-    // setter for name
-
-    /**
-     *
-     * @param name 2,3,4,5,6,7,8,9,10, jack, queen, king, ace
-     */
-    public void setName(String name) {
-        List<String> validFaceNames = getValidFaceNames();
-        name = name.toLowerCase();
-
-        if(validFaceNames.contains(name)) {
-            this.name = name;
+    // getter for suit
+    public int getSuit() { return suit; }
+    // setter for suit
+    public void setSuit(int suit) {
+        List<Integer> validSuits = getValidSuits();
+        if(validSuits.contains(suit)) {
+            this.suit = suit;
+        } else {
+            throw new IllegalArgumentException("Valid Suits are: " + validSuits);
         }
     }
 
-    // getter for suit
-    public int getSuit() {
-        return suit;
-    }
-    // setter for suit
-    public void setSuit(int suit) {
-        this.suit = suit;
-    }
     // getter for card rank
-    public int getRank() {
-        return rank;
-    }
+    public int getRank() { return rank; }
     // setter for card rank
     public void setRank(int rank) {
-        this.rank = rank;
+        List<Integer> validRank = getValidRank();
+        if(validRank.contains(rank)) {
+            this.rank = rank;
+        } else {
+            throw new IllegalArgumentException("Valid Ranks are: " + validRank);
+        }
     }
 
     /**
-     * This method will return a list of face names that are valid for Card objects
+     * This method will return a list of valid suits for card object
      * static because it is generic for all card decks
+     *         // 1 = diamond
+     *         // 2 = heart
+     *         // 3 = club
+     *         // 4 = spade
+     * @return
      */
-    public static List<String> getValidFaceNames() {
-        return Arrays.asList("2","3","4","5","6","7","8","9","10","jack","queen","king","ace");
+    public static List<Integer> getValidSuits() {
+        return Arrays.asList(1,2,3,4);
     }
-    /*public static ArrayList<Integer> getValidSuits() {
-        r
-    }*/
 
+    /**
+     * This method will return a list of valid ranks for card object
+     * static because it is generic for all card decks
+     *         // 11 = jack
+     *         // 12 = queen
+     *         // 13 = king
+     *         // 14 = ace
+     * @return
+     */
+    public static List<Integer> getValidRank() {
+        return Arrays.asList(2,3,4,5,6,7,8,9,10,11,12,13,14);
+    }
 
     /**
      *
      * @param suit
      * @param rank
      */
-    public Card(String name, int suit, int rank) { // card constructor
-        setName(name);
+    public Card(int suit, int rank) { // card constructor
         setSuit(suit);
         setRank(rank);
-
-        //this.name = name;
-        //this.suit = suit;
-        //this.rank = rank;
     }
 
     /**
