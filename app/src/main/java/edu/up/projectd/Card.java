@@ -16,7 +16,6 @@ public class Card {
     // setter for suit
     public void setSuit(int suit) {
         List<Integer> validSuits = getValidSuits();
-
         if(validSuits.contains(suit)) {
             this.suit = suit;
         } else {
@@ -29,7 +28,6 @@ public class Card {
     // setter for card rank
     public void setRank(int rank) {
         List<Integer> validRank = getValidRank();
-
         if(validRank.contains(rank)) {
             this.rank = rank;
         } else {
@@ -47,7 +45,6 @@ public class Card {
      * @return
      */
     public static List<Integer> getValidSuits() {
-
         return Arrays.asList(1,2,3,4);
     }
 
