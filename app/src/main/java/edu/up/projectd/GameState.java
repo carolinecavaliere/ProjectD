@@ -1,21 +1,31 @@
 package edu.up.projectd;
 
+import java.util.ArrayList;
+
 public class GameState {
+
+    int numPlayers;
+
     int p1numCards;
     int p2numCards;
     int p3numCards;
     int p4numCards;
 
-    int p1TopCard1;
-    int p1TopCard2;
-    int p1TopCard3;
-    int p2TopCard1;
-    int p2TopCard2;
-    int p2TopCard3;
-    int p3TopCard1;
-    int p3TopCard2;
-    int p3TopCard3;
-    int p4TopCard1;
-    int p4TopCard2;
+    ArrayList<Card> p1TopCards = new ArrayList<Card>();
+    ArrayList<Card> p1BottomCards = new ArrayList<Card>();
 
+    ArrayList<Card> p2TopCards = new ArrayList<Card>();
+    ArrayList<Card> p2BottomCards = new ArrayList<Card>();
+
+    ArrayList<Card> p3TopCards = new ArrayList<Card>();
+    ArrayList<Card> p3BottomCards = new ArrayList<Card>();
+
+    ArrayList<Card> p4TopCards = new ArrayList<Card>();
+    ArrayList<Card> p4BottomCards = new ArrayList<Card>();
+
+    Card drawPileTopCard;
+    Card playPileTopCard;
+
+    int drawPileNumCards;
+    int playPileNumCards;
 }
