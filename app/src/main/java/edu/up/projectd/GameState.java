@@ -66,13 +66,12 @@ public class GameState {
 
         if(this.numPlayers==2)
         {
-            deck = new DeckOfCards(1);
+            deck = new DeckOfCards(1, this);
         }
         else
         {
-            deck= new DeckOfCards(2);
+            deck= new DeckOfCards(2, this);
         }
-        drawPileNumCards = deck.deck.size();
-
+        deck.DealDeck();
     }
 }

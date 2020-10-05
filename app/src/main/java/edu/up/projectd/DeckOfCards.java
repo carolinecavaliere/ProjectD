@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class DeckOfCards {
-    ArrayList<Card> deck = new ArrayList<Card>();
-    DeckOfCards(int numDecks){
+    static ArrayList<Card> deck = new ArrayList<Card>();//actual array
+    static GameState state;
+    DeckOfCards(int numDecks, GameState state){
+        state = this.state;
+        state.drawPileNumCards=0;
         for(int i = 0; i<numDecks; i++){
             deck.add(new Card(1, 14));
             deck.add(new Card(2, 14));
@@ -71,6 +74,7 @@ public class DeckOfCards {
             deck.add(new Card(2, 2));
             deck.add(new Card(3, 2));
             deck.add(new Card(4, 2));
+            state.drawPileNumCards+=52;
         }
         ShuffleDeck(deck);
     }
@@ -79,7 +83,86 @@ public class DeckOfCards {
         Collections.shuffle(myDeck);
     }
 
-    public static void DealDeck(ArrayList<Card> myDeck, GameState state){
-        
+    public static void DealDeck(){
+        for (int i=0; i<3; i++){
+            if(state.numPlayers==2){
+                state.p1BottomCards.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p2BottomCards.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+            }
+            else if (state.numPlayers==3){
+                state.p1BottomCards.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p2BottomCards.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p3BottomCards.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+            }
+            else{
+                state.p1BottomCards.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p2BottomCards.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p3BottomCards.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p4BottomCards.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+            }
+        }
+        for (int i = 0; i<6; i++){
+            if(state.numPlayers==2){
+                state.p1Hand.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p1numCards++;
+                state.p2Hand.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p2numCards++;
+            }
+            else if (state.numPlayers==3){
+                state.p1Hand.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p1numCards++;
+                state.p2Hand.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p2numCards++;
+                state.p3Hand.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p3numCards++;
+            }
+            else{
+                state.p1Hand.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p1numCards++;
+                state.p2Hand.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p2numCards++;
+                state.p3Hand.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p3numCards++;
+                state.p4Hand.add(deck.get(0));
+                deck.remove(0);
+                state.drawPileNumCards--;
+                state.p4numCards++;
+            }
+        }
+        state.drawPileTopCard=deck.get(0);
     }
 }
