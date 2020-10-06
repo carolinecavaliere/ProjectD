@@ -2,6 +2,7 @@ package edu.up.projectd;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class DeckOfCards {
     static ArrayList<Card> deck = new ArrayList<Card>();//actual array
@@ -79,6 +80,13 @@ public class DeckOfCards {
         ShuffleDeck(deck);
     }
 
+    public DeckOfCards(DeckOfCards orig){
+        deck = new ArrayList<Card>();
+        for(int i = 0; i<orig.deck.size(); i++){
+            deck.add(new Card(orig.deck.get(i)));
+            this.state = orig.state;
+        }
+    }
     public static void ShuffleDeck(ArrayList<Card> myDeck){
         Collections.shuffle(myDeck);
     }
