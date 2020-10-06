@@ -104,7 +104,7 @@ public class GameState {
 
         this.turn = orig.turn;
 
-        this.deck = new DeckOfCards(orig.deck);
+        this.deck = new DeckOfCards(1, orig);
 
         for(int i=0; i<p1TopCards.size() ; i++)
         {
@@ -145,5 +145,41 @@ public class GameState {
 
         this.drawPileNumCards = orig.drawPileNumCards;
         this.playPileNumCards = orig.playPileNumCards;
+    }
+
+    public String toString() {
+        String ret =  "Number of Players: " + numPlayers + "\n" +
+                "Number of Cards in Draw Pile: " + drawPileNumCards + "\n" +
+                "Next Card in the Draw Pile: " + drawPileTopCard + "\n" +
+                "Number of Cards in Discard Pile: " + playPileNumCards + "\n" +
+                "Current Card in Discard Pile: " + playPileTopCard + "\n" +
+
+                "Player 1: \n"  +
+                "Number of Cards: " + p1numCards + "\n" +
+                "Cards in Hand: " + p1Hand.toString() + "\n" +
+                "Bottom Cards: " + p1BottomCards.toString() + "\n" +
+                "Top Cards: " + p1TopCards.toString() + "\n" +
+
+                "Player 2: " + "\n" +
+                "Number of Cards: " + p2numCards + "\n" +
+                "Cards in Hand: " + p2Hand.toString() + "\n" +
+                "Bottom Cards: " + p2BottomCards.toString() + "\n" +
+                "Top Cards: " + p2TopCards.toString() + "\n";
+
+        if (numPlayers == 3) {
+            ret = ret + "Player 3: " + "\n" +
+                    "Number of Cards: " + p3numCards + "\n" +
+                    "Cards in Hand: " + p3Hand.toString() + "\n" +
+                    "Bottom Cards: " + p3BottomCards.toString() + "\n" +
+                    "Top Cards: " + p3TopCards.toString() + "\n";
+
+        } else if (numPlayers == 4) {
+            ret = ret + "Player 4: " + "\n" +
+                    "Number of Cards: " + p4numCards + "\n" +
+                    "Cards in Hand: " + p4Hand.toString() + "\n" +
+                    "Bottom Cards: " + p4BottomCards.toString() + "\n" +
+                    "Top Cards: " + p4TopCards.toString() + "\n";
+        }
+        return ret;
     }
 }
