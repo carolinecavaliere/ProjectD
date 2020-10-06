@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    GameState gameState = new GameState();
+    GameState gameState = new GameState(2);
 
     // click the "RUN TEST" button
     Button runTest = findViewById(R.id.RunTest);
