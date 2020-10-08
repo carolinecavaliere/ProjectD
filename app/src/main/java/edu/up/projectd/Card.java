@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Citation: https://www.youtube.com/watch?v=_AUtutrnEP8
+ */
 public class Card {
     private int suit;
     private int rank;
@@ -72,12 +75,13 @@ public class Card {
     }
 
     /**
-     *
+     * Deep state copy constructor
      * @param orig
      */
     public Card (Card orig) { // deep state constructor
         this.suit = orig.suit;
         this.rank = orig.rank;
+
 
     }
 }

@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     GameState gameState = new GameState(2);
 
     // click the "RUN TEST" button

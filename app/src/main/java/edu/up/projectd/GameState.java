@@ -5,39 +5,224 @@ import java.util.Iterator;
 
 public class GameState {
 
-    int numPlayers;
+    private int numPlayers;
 
-    int p1numCards;
-    int p2numCards;
-    int p3numCards;
-    int p4numCards;
+    private int p1numCards;
+    private int p2numCards;
+    private int p3numCards;
+    private int p4numCards;
 
-    ArrayList<Card> p1Hand;
-    ArrayList<Card> p2Hand;
-    ArrayList<Card> p3Hand;
-    ArrayList<Card> p4Hand;
+    private ArrayList<Card> p1Hand;
+    private ArrayList<Card> p2Hand;
+    private ArrayList<Card> p3Hand;
+    private ArrayList<Card> p4Hand;
 
-    int turn;
+    private int turn;
 
-    DeckOfCards deck;
+    private DeckOfCards deck;
 
-    ArrayList<Card> p1TopCards;
-    ArrayList<Card> p1BottomCards;
+    private ArrayList<Card> p1TopCards;
+    private ArrayList<Card> p1BottomCards;
 
-    ArrayList<Card> p2TopCards;
-    ArrayList<Card> p2BottomCards;
+    private ArrayList<Card> p2TopCards;
+    private ArrayList<Card> p2BottomCards;
 
-    ArrayList<Card> p3TopCards;
+    private ArrayList<Card> p3TopCards;
     ArrayList<Card> p3BottomCards;
 
-    ArrayList<Card> p4TopCards;
-    ArrayList<Card> p4BottomCards;
+    private ArrayList<Card> p4TopCards;
+    private ArrayList<Card> p4BottomCards;
 
-    Card drawPileTopCard;
-    Card playPileTopCard;
+    private Card drawPileTopCard;
+    private Card playPileTopCard;
 
-    int drawPileNumCards;
-    int playPileNumCards;
+    private int drawPileNumCards;
+
+    public int getNumPlayers() {
+        return numPlayers;
+    }
+
+    public void setNumPlayers(int numPlayers) {
+        this.numPlayers = numPlayers;
+    }
+
+    public int getP1numCards() {
+        return p1numCards;
+    }
+
+    public void setP1numCards(int p1numCards) {
+        this.p1numCards = p1numCards;
+    }
+
+    public int getP2numCards() {
+        return p2numCards;
+    }
+
+    public void setP2numCards(int p2numCards) {
+        this.p2numCards = p2numCards;
+    }
+
+    public int getP3numCards() {
+        return p3numCards;
+    }
+
+    public void setP3numCards(int p3numCards) {
+        this.p3numCards = p3numCards;
+    }
+
+    public int getP4numCards() {
+        return p4numCards;
+    }
+
+    public void setP4numCards(int p4numCards) {
+        this.p4numCards = p4numCards;
+    }
+
+    public ArrayList<Card> getP1Hand() {
+        return p1Hand;
+    }
+
+    public void setP1Hand(ArrayList<Card> p1Hand) {
+        this.p1Hand = p1Hand;
+    }
+
+    public ArrayList<Card> getP2Hand() {
+        return p2Hand;
+    }
+
+    public void setP2Hand(ArrayList<Card> p2Hand) {
+        this.p2Hand = p2Hand;
+    }
+
+    public ArrayList<Card> getP3Hand() {
+        return p3Hand;
+    }
+
+    public void setP3Hand(ArrayList<Card> p3Hand) {
+        this.p3Hand = p3Hand;
+    }
+
+    public ArrayList<Card> getP4Hand() {
+        return p4Hand;
+    }
+
+    public void setP4Hand(ArrayList<Card> p4Hand) {
+        this.p4Hand = p4Hand;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
+    public DeckOfCards getDeck() {
+        return deck;
+    }
+
+    public void setDeck(DeckOfCards deck) {
+        this.deck = deck;
+    }
+
+    public ArrayList<Card> getP1TopCards() {
+        return p1TopCards;
+    }
+
+    public void setP1TopCards(ArrayList<Card> p1TopCards) {
+        this.p1TopCards = p1TopCards;
+    }
+
+    public ArrayList<Card> getP1BottomCards() {
+        return p1BottomCards;
+    }
+
+    public void setP1BottomCards(ArrayList<Card> p1BottomCards) {
+        this.p1BottomCards = p1BottomCards;
+    }
+
+    public ArrayList<Card> getP2TopCards() {
+        return p2TopCards;
+    }
+
+    public void setP2TopCards(ArrayList<Card> p2TopCards) {
+        this.p2TopCards = p2TopCards;
+    }
+
+    public ArrayList<Card> getP2BottomCards() {
+        return p2BottomCards;
+    }
+
+    public void setP2BottomCards(ArrayList<Card> p2BottomCards) {
+        this.p2BottomCards = p2BottomCards;
+    }
+
+    public ArrayList<Card> getP3TopCards() {
+        return p3TopCards;
+    }
+
+    public void setP3TopCards(ArrayList<Card> p3TopCards) {
+        this.p3TopCards = p3TopCards;
+    }
+
+    public ArrayList<Card> getP3BottomCards() {
+        return p3BottomCards;
+    }
+
+    public void setP3BottomCards(ArrayList<Card> p3BottomCards) {
+        this.p3BottomCards = p3BottomCards;
+    }
+
+    public ArrayList<Card> getP4TopCards() {
+        return p4TopCards;
+    }
+
+    public void setP4TopCards(ArrayList<Card> p4TopCards) {
+        this.p4TopCards = p4TopCards;
+    }
+
+    public ArrayList<Card> getP4BottomCards() {
+        return p4BottomCards;
+    }
+
+    public void setP4BottomCards(ArrayList<Card> p4BottomCards) {
+        this.p4BottomCards = p4BottomCards;
+    }
+
+    public Card getDrawPileTopCard() {
+        return drawPileTopCard;
+    }
+
+    public void setDrawPileTopCard(Card drawPileTopCard) {
+        this.drawPileTopCard = drawPileTopCard;
+    }
+
+    public Card getPlayPileTopCard() {
+        return playPileTopCard;
+    }
+
+    public void setPlayPileTopCard(Card playPileTopCard) {
+        this.playPileTopCard = playPileTopCard;
+    }
+
+    public int getDrawPileNumCards() {
+        return drawPileNumCards;
+    }
+
+    public void setDrawPileNumCards(int drawPileNumCards) {
+        this.drawPileNumCards = drawPileNumCards;
+    }
+
+    public int getPlayPileNumCards() {
+        return playPileNumCards;
+    }
+
+    public void setPlayPileNumCards(int playPileNumCards) {
+        this.playPileNumCards = playPileNumCards;
+    }
+
+    private int playPileNumCards;
 
     public GameState(int numPlayers)
     {
