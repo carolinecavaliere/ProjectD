@@ -33,25 +33,7 @@ public class GameState {
     private ArrayList<Card> p4TopCards;
     private ArrayList<Card> p4BottomCards;
 
-    private ArrayList<Card> selectedCards; // array of selected cards
-    private Boolean cardSelected; // checks to see if a card is selected or not
-
-    public ArrayList<Card> getSelectedCards() {
-        return selectedCards;
-    }
-
-    public void setSelectedCards(ArrayList<Card> selectedCards) {
-        this.selectedCards = selectedCards;
-    }
-
-    public Boolean getCardSelected() {
-        return cardSelected;
-    }
-
-    public void setCardSelected(Boolean cardSelected) {
-        this.cardSelected = cardSelected;
-    }
-
+    private ArrayList<Card> playPileCards;
     private Card drawPileTopCard;
     private Card playPileTopCard;
 
@@ -139,6 +121,14 @@ public class GameState {
 
     public DeckOfCards getDeck() {
         return deck;
+    }
+
+    public ArrayList<Card> getPlayPileCards() {
+        return playPileCards;
+    }
+
+    public void setPlayPileCards(ArrayList<Card> playPileCards) {
+        this.playPileCards = playPileCards;
     }
 
     public void setDeck(DeckOfCards deck) {
@@ -346,6 +336,7 @@ public class GameState {
 
         drawPileTopCard = new Card(orig.drawPileTopCard);
         playPileTopCard = new Card(orig.playPileTopCard);
+        playPileCards.add(playPileTopCard);
 
         this.drawPileNumCards = orig.drawPileNumCards;
         this.playPileNumCards = orig.playPileNumCards;
