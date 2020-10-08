@@ -28,10 +28,29 @@ public class GameState {
     private ArrayList<Card> p2BottomCards;
 
     private ArrayList<Card> p3TopCards;
-    ArrayList<Card> p3BottomCards;
+    private ArrayList<Card> p3BottomCards;
 
     private ArrayList<Card> p4TopCards;
     private ArrayList<Card> p4BottomCards;
+
+    private ArrayList<Card> selectedCards; // array of selected cards
+    private Boolean cardSelected; // checks to see if a card is selected or not
+
+    public ArrayList<Card> getSelectedCards() {
+        return selectedCards;
+    }
+
+    public void setSelectedCards(ArrayList<Card> selectedCards) {
+        this.selectedCards = selectedCards;
+    }
+
+    public Boolean getCardSelected() {
+        return cardSelected;
+    }
+
+    public void setCardSelected(Boolean cardSelected) {
+        this.cardSelected = cardSelected;
+    }
 
     private Card drawPileTopCard;
     private Card playPileTopCard;
