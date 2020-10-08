@@ -9,7 +9,7 @@ public class DeckOfCards {
     static GameState state;
     DeckOfCards(int numDecks, GameState state){
         state = this.state;
-        state.drawPileNumCards=0;
+        state.setDrawPileNumCards(0);
         for(int i = 0; i<numDecks; i++){
             deck.add(new Card(1, 14));
             deck.add(new Card(2, 14));
@@ -75,7 +75,7 @@ public class DeckOfCards {
             deck.add(new Card(2, 2));
             deck.add(new Card(3, 2));
             deck.add(new Card(4, 2));
-            state.drawPileNumCards+=52;
+            state.setDrawPileNumCards(state.getDrawPileNumCards()+52);
         }
         ShuffleDeck(deck);
     }
@@ -92,85 +92,122 @@ public class DeckOfCards {
     }
 
     public static void DealDeck(){
+        ArrayList<Card> temp = new ArrayList<Card>();
         for (int i=0; i<3; i++){
-            if(state.numPlayers==2){
-                state.p1BottomCards.add(deck.get(0));
+            if(state.getNumPlayers()==2){
+                temp = state.getP1BottomCards();
+                temp.add(deck.get(0));
+                state.setP1BottomCards(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p2BottomCards.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                temp = state.getP2BottomCards();
+                temp.add(deck.get(0));
+                state.setP2BottomCards(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
             }
-            else if (state.numPlayers==3){
-                state.p1BottomCards.add(deck.get(0));
+            else if (state.getNumPlayers()==3){
+                temp = state.getP1BottomCards();
+                temp.add(deck.get(0));
+                state.setP1BottomCards(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p2BottomCards.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                temp = state.getP2BottomCards();
+                temp.add(deck.get(0));
+                state.setP2BottomCards(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p3BottomCards.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                temp = state.getP3BottomCards();
+                temp.add(deck.get(0));
+                state.setP3BottomCards(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
             }
             else{
-                state.p1BottomCards.add(deck.get(0));
+                temp = state.getP1BottomCards();
+                temp.add(deck.get(0));
+                state.setP1BottomCards(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p2BottomCards.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                temp = state.getP2BottomCards();
+                temp.add(deck.get(0));
+                state.setP2BottomCards(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p3BottomCards.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                temp = state.getP3BottomCards();
+                temp.add(deck.get(0));
+                state.setP3BottomCards(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p4BottomCards.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                temp = state.getP4BottomCards();
+                temp.add(deck.get(0));
+                state.setP4BottomCards(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
             }
         }
         for (int i = 0; i<6; i++){
-            if(state.numPlayers==2){
-                state.p1Hand.add(deck.get(0));
+            if(state.getNumPlayers()==2){
+                temp = state.getP1Hand();
+                temp.add(deck.get(0));
+                state.setP1Hand(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p1numCards++;
-                state.p2Hand.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.setP1numCards(state.getP1numCards()+1);
+                temp = state.getP2Hand();
+                temp.add(deck.get(0));
+                state.setP2Hand(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p2numCards++;
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.setP2numCards(state.getP2numCards()+1);
             }
-            else if (state.numPlayers==3){
-                state.p1Hand.add(deck.get(0));
+            else if (state.getNumPlayers()==3){
+                temp = state.getP1Hand();
+                temp.add(deck.get(0));
+                state.setP1Hand(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p1numCards++;
-                state.p2Hand.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.setP1numCards(state.getP1numCards()+1);
+                temp = state.getP2Hand();
+                temp.add(deck.get(0));
+                state.setP2Hand(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p2numCards++;
-                state.p3Hand.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.setP2numCards(state.getP2numCards()+1);
+                temp = state.getP3Hand();
+                temp.add(deck.get(0));
+                state.setP3Hand(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p3numCards++;
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.setP3numCards(state.getP3numCards()+1);
             }
             else{
-                state.p1Hand.add(deck.get(0));
+                temp = state.getP1Hand();
+                temp.add(deck.get(0));
+                state.setP1Hand(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p1numCards++;
-                state.p2Hand.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.setP1numCards(state.getP1numCards()+1);
+                temp = state.getP2Hand();
+                temp.add(deck.get(0));
+                state.setP2Hand(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p2numCards++;
-                state.p3Hand.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.setP2numCards(state.getP2numCards()+1);
+                temp = state.getP3Hand();
+                temp.add(deck.get(0));
+                state.setP3Hand(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p3numCards++;
-                state.p4Hand.add(deck.get(0));
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.setP3numCards(state.getP3numCards()+1);
+                temp = state.getP4Hand();
+                temp.add(deck.get(0));
+                state.setP4Hand(temp);
                 deck.remove(0);
-                state.drawPileNumCards--;
-                state.p4numCards++;
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.setP3numCards(state.getP3numCards()+1);
             }
         }
-        state.drawPileTopCard=deck.get(0);
+        state.setDrawPileTopCard(deck.get(0));
     }
 }

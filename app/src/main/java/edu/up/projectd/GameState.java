@@ -28,7 +28,7 @@ public class GameState {
     private ArrayList<Card> p2BottomCards;
 
     private ArrayList<Card> p3TopCards;
-    ArrayList<Card> p3BottomCards;
+    private ArrayList<Card> p3BottomCards;
 
     private ArrayList<Card> p4TopCards;
     private ArrayList<Card> p4BottomCards;
