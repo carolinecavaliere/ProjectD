@@ -11,7 +11,7 @@ public class PlayCardAction
             return false;
         }
 
-        else if(cardSelected==false)
+        else if(state.getCardSelected()==false)
         {
             return false;
         }
@@ -24,7 +24,7 @@ public class PlayCardAction
             }
             for(int i = 0; i < cardsToPlay.size(); i++)
             {
-                
+                //need to add cards to play pile
             }
 
         }

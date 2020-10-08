@@ -43,7 +43,7 @@ public class GameState {
         this.selectedCards = selectedCards;
     }
 
-    public Boolean getCardSelected() {
+    public boolean getCardSelected() {
         return cardSelected;
     }
 
@@ -52,7 +52,7 @@ public class GameState {
     }
 
     private ArrayList<Card> selectedCards; // array of selected cards
-    private Boolean cardSelected; // checks to see if a card is selected or not
+    private boolean cardSelected; // checks to see if a card is selected or not
 
     private Card drawPileTopCard;
     private Card playPileTopCard;
