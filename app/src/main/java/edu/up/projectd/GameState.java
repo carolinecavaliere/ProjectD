@@ -33,6 +33,7 @@ public class GameState {
     private ArrayList<Card> p4TopCards;
     private ArrayList<Card> p4BottomCards;
 
+    private ArrayList<Card> playPileCards;
     private Card drawPileTopCard;
     private Card playPileTopCard;
 
@@ -120,6 +121,14 @@ public class GameState {
 
     public DeckOfCards getDeck() {
         return deck;
+    }
+
+    public ArrayList<Card> getPlayPileCards() {
+        return playPileCards;
+    }
+
+    public void setPlayPileCards(ArrayList<Card> playPileCards) {
+        this.playPileCards = playPileCards;
     }
 
     public void setDeck(DeckOfCards deck) {
@@ -327,6 +336,7 @@ public class GameState {
 
         drawPileTopCard = new Card(orig.drawPileTopCard);
         playPileTopCard = new Card(orig.playPileTopCard);
+        playPileCards.add(playPileTopCard);
 
         this.drawPileNumCards = orig.drawPileNumCards;
         this.playPileNumCards = orig.playPileNumCards;
