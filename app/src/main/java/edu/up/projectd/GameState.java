@@ -35,6 +35,17 @@ public class GameState {
 
     private ArrayList<Card> playPileCards;
 
+
+
+
+    private ArrayList<Card> selectedCards; // array of selected cards
+    private Boolean cardSelected; // checks to see if a card is selected or not
+
+    private Card drawPileTopCard;
+    private Card playPileTopCard;
+
+    private int drawPileNumCards;
+
     public ArrayList<Card> getSelectedCards() {
         return selectedCards;
     }
@@ -50,14 +61,6 @@ public class GameState {
     public void setCardSelected(Boolean cardSelected) {
         this.cardSelected = cardSelected;
     }
-
-    private ArrayList<Card> selectedCards; // array of selected cards
-    private Boolean cardSelected; // checks to see if a card is selected or not
-
-    private Card drawPileTopCard;
-    private Card playPileTopCard;
-
-    private int drawPileNumCards;
 
     public int getNumPlayers() {
         return numPlayers;
