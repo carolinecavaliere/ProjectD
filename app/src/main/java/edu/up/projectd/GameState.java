@@ -1,7 +1,6 @@
 package edu.up.projectd;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class GameState {
 
@@ -35,10 +34,7 @@ public class GameState {
 
     private ArrayList<Card> playPileCards;
 
-
-
-
-    private ArrayList<Card> selectedCards; // array of selected cards
+    private Card selectedCards; // array of selected cards
     private Boolean cardSelected; // checks to see if a card is selected or not
 
     private Card drawPileTopCard;
@@ -46,11 +42,11 @@ public class GameState {
 
     private int drawPileNumCards;
 
-    public ArrayList<Card> getSelectedCards() {
+    public Card getSelectedCards() {
         return selectedCards;
     }
 
-    public void setSelectedCards(ArrayList<Card> selectedCards) {
+    public void setSelectedCards(Card selectedCards) {
         this.selectedCards = selectedCards;
     }
 
