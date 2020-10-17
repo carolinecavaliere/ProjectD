@@ -49,7 +49,7 @@ public class GameState {
     }
 
     public void setSelectedCards(ArrayList<Card> selectedCards) {
-        this.selectedCards = selectedCards;
+        this.selectedCards = new ArrayList<Card>(selectedCards);
     }
 
     public Boolean getCardSelected() {
@@ -105,7 +105,7 @@ public class GameState {
     }
 
     public void setP1Hand(ArrayList<Card> p1Hand) {
-        this.p1Hand = p1Hand;
+        this.p1Hand = new ArrayList<Card>(p1Hand);
     }
 
     public ArrayList<Card> getP2Hand() {
@@ -113,7 +113,7 @@ public class GameState {
     }
 
     public void setP2Hand(ArrayList<Card> p2Hand) {
-        this.p2Hand = p2Hand;
+        this.p2Hand = new ArrayList<Card>(p2Hand);
     }
 
     public ArrayList<Card> getP3Hand() {
@@ -121,7 +121,7 @@ public class GameState {
     }
 
     public void setP3Hand(ArrayList<Card> p3Hand) {
-        this.p3Hand = p3Hand;
+        this.p3Hand = new ArrayList<Card>(p3Hand);
     }
 
     public ArrayList<Card> getP4Hand() {
@@ -129,7 +129,7 @@ public class GameState {
     }
 
     public void setP4Hand(ArrayList<Card> p4Hand) {
-        this.p4Hand = p4Hand;
+        this.p4Hand = new ArrayList<Card>(p4Hand);
     }
 
     public int getTurn() {
@@ -149,7 +149,7 @@ public class GameState {
     }
 
     public void setPlayPileCards(ArrayList<Card> playPileCards) {
-        this.playPileCards = playPileCards;
+        this.playPileCards = new ArrayList<Card>(playPileCards);
     }
 
     public void setDeck(DeckOfCards deck) {
@@ -161,7 +161,7 @@ public class GameState {
     }
 
     public void setP1TopCards(ArrayList<Card> p1TopCards) {
-        this.p1TopCards = p1TopCards;
+        this.p1TopCards = new ArrayList<Card>(p1TopCards);
     }
 
     public ArrayList<Card> getP1BottomCards() {
@@ -169,7 +169,7 @@ public class GameState {
     }
 
     public void setP1BottomCards(ArrayList<Card> p1BottomCards) {
-        this.p1BottomCards = p1BottomCards;
+        this.p1BottomCards = new ArrayList<Card>(p1BottomCards);
     }
 
     public ArrayList<Card> getP2TopCards() {
@@ -177,7 +177,7 @@ public class GameState {
     }
 
     public void setP2TopCards(ArrayList<Card> p2TopCards) {
-        this.p2TopCards = p2TopCards;
+        this.p2TopCards = new ArrayList<Card>(p2TopCards);
     }
 
     public ArrayList<Card> getP2BottomCards() {
@@ -185,7 +185,7 @@ public class GameState {
     }
 
     public void setP2BottomCards(ArrayList<Card> p2BottomCards) {
-        this.p2BottomCards = p2BottomCards;
+        this.p2BottomCards = new ArrayList<Card>(p2BottomCards);
     }
 
     public ArrayList<Card> getP3TopCards() {
@@ -193,7 +193,7 @@ public class GameState {
     }
 
     public void setP3TopCards(ArrayList<Card> p3TopCards) {
-        this.p3TopCards = p3TopCards;
+        this.p3TopCards = new ArrayList<Card>(p3TopCards);
     }
 
     public ArrayList<Card> getP3BottomCards() {
@@ -201,7 +201,7 @@ public class GameState {
     }
 
     public void setP3BottomCards(ArrayList<Card> p3BottomCards) {
-        this.p3BottomCards = p3BottomCards;
+        this.p3BottomCards = new ArrayList<Card>(p3BottomCards);
     }
 
     public ArrayList<Card> getP4TopCards() {
@@ -209,7 +209,7 @@ public class GameState {
     }
 
     public void setP4TopCards(ArrayList<Card> p4TopCards) {
-        this.p4TopCards = p4TopCards;
+        this.p4TopCards = new ArrayList<Card>(p4TopCards);
     }
 
     public ArrayList<Card> getP4BottomCards() {
@@ -217,7 +217,7 @@ public class GameState {
     }
 
     public void setP4BottomCards(ArrayList<Card> p4BottomCards) {
-        this.p4BottomCards = p4BottomCards;
+        this.p4BottomCards = new ArrayList<Card>(p4BottomCards);
     }
 
     public Card getDrawPileTopCard() {
