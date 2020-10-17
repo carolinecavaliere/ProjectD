@@ -290,9 +290,27 @@ public class GameState {
             deck= new DeckOfCards(2, this);
         }
 
+        //temp fix for dealDeck()
+        p1Hand.add(deck.getNextCard());
+        p1Hand.add(deck.getNextCard());
         p1Hand.add(deck.getNextCard());
         p1TopCards.add(deck.getNextCard());
+        p1TopCards.add(deck.getNextCard());
+        p1TopCards.add(deck.getNextCard());
         p1BottomCards.add(deck.getNextCard());
+        p1BottomCards.add(deck.getNextCard());
+        p1BottomCards.add(deck.getNextCard());
+
+        p2Hand.add(deck.getNextCard());
+        p2Hand.add(deck.getNextCard());
+        p2Hand.add(deck.getNextCard());
+        p2TopCards.add(deck.getNextCard());
+        p2TopCards.add(deck.getNextCard());
+        p2TopCards.add(deck.getNextCard());
+        p2BottomCards.add(deck.getNextCard());
+        p2BottomCards.add(deck.getNextCard());
+        p2BottomCards.add(deck.getNextCard());
+
 
         playPileTopCard = deck.getNextCard();
         drawPileTopCard = deck.getNextCard();

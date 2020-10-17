@@ -90,8 +90,8 @@ public class Card extends ArrayList<Card> {
     }
 
     public String toString() {
-        return "Card Rank: " + getRank()+ "\n" +
-                "Card Suit: " + getSuit()+"\n";
+        return " Card Rank: " + getRank()+ " " +
+                "Card Suit: " + getSuit();
     }
 
     @NonNull
