@@ -8,51 +8,51 @@ public class SwitchBaseCardsAction {
 
         int index;
         ArrayList<Card> handCards;
-        ArrayList<Card> botCards;
+        ArrayList<Card> topCards;
 
         if (playerID == gameState.getTurn()) {
             if (playerID == 1) {
                 handCards = new ArrayList<Card>(gameState.getP1Hand());
-                botCards = new ArrayList<Card>(gameState.getP1BottomCards());
-                index = botCards.indexOf(bot);
-                botCards.set(index, hand);
+                topCards = new ArrayList<Card>(gameState.getP1TopCards());
+                index = topCards.indexOf(bot);
+                topCards.set(index, hand);
                 index = handCards.indexOf(hand);
                 handCards.set(index, bot);
                 gameState.setP1Hand(handCards);
-                gameState.setP1BottomCards(botCards);
+                gameState.setP1TopCards(topCards);
                 return true;
             }
             else if (playerID == 2) {
                 handCards = gameState.getP2Hand();
-                botCards = gameState.getP2BottomCards();
-                index = botCards.indexOf(bot);
-                botCards.set(index, hand);
+                topCards = gameState.getP2TopCards();
+                index = topCards.indexOf(bot);
+                topCards.set(index, hand);
                 index = handCards.indexOf(hand);
                 handCards.set(index, bot);
                 gameState.setP1Hand(handCards);
-                gameState.setP1BottomCards(botCards);
+                gameState.setP1TopCards(topCards);
                 return true;
             }
             else if (playerID == 3) {
                 handCards = gameState.getP3Hand();
-                botCards = gameState.getP3BottomCards();
-                index = botCards.indexOf(bot);
-                botCards.set(index, hand);
+                topCards = gameState.getP3TopCards();
+                index = topCards.indexOf(bot);
+                topCards.set(index, hand);
                 index = handCards.indexOf(hand);
                 handCards.set(index, bot);
                 gameState.setP1Hand(handCards);
-                gameState.setP1BottomCards(botCards);
+                gameState.setP1TopCards(topCards);
                 return true;
             }
             else if (playerID == 4) {
                 handCards = gameState.getP4Hand();
-                botCards = gameState.getP4BottomCards();
-                index = botCards.indexOf(bot);
-                botCards.set(index, hand);
+                topCards = gameState.getP4TopCards();
+                index = topCards.indexOf(bot);
+                topCards.set(index, hand);
                 index = handCards.indexOf(hand);
                 handCards.set(index, bot);
                 gameState.setP1Hand(handCards);
-                gameState.setP1BottomCards(botCards);
+                gameState.setP1TopCards(topCards);
                 return true;
             }
             else {

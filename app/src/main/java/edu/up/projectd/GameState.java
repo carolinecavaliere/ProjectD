@@ -289,7 +289,10 @@ public class GameState {
         {
             deck= new DeckOfCards(2, this);
         }
-        deck.DealDeck();
+
+        p1Hand.add(deck.getNextCard());
+        p1TopCards.add(deck.getNextCard());
+        p1BottomCards.add(deck.getNextCard());
 
         playPileTopCard = deck.getNextCard();
         drawPileTopCard = deck.getNextCard();
