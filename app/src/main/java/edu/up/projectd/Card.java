@@ -2,14 +2,17 @@ package edu.up.projectd;
 
 import android.media.Image;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Citation: https://www.youtube.com/watch?v=_AUtutrnEP8
  */
-public class Card {
+public class Card extends ArrayList<Card> {
     private int suit;
     private int rank;
     //private Image image;
@@ -83,5 +86,17 @@ public class Card {
         this.rank = orig.getRank();
 
 
+    }
+
+    @NonNull
+    @Override
+    public Stream<Card> stream() {
+        return null;
+    }
+
+    @NonNull
+    @Override
+    public Stream<Card> parallelStream() {
+        return null;
     }
 }
