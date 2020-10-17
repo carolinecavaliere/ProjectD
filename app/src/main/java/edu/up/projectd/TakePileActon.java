@@ -2,7 +2,7 @@ package edu.up.projectd;
 
 import java.util.ArrayList;
 
-public class TakePile {
+public class TakePileActon {
 
     public boolean takePile(int playerID, GameState gameState) {
         ArrayList<Card> card = gameState.getPlayPileCards();

@@ -2,7 +2,7 @@ package edu.up.projectd;
 
 import java.util.ArrayList;
 
-public class SwitchBaseCards {
+public class SwitchBaseCardsAction {
 
     public boolean switchBaseCards(int playerID, GameState gameState, Card hand, Card bot) {
 

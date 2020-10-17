@@ -79,8 +79,8 @@ public class Card {
      * @param orig
      */
     public Card (Card orig) { // deep state constructor
-        this.suit = orig.suit;
-        this.rank = orig.rank;
+        this.suit = orig.getSuit();
+        this.rank = orig.getRank();
 
 
     }

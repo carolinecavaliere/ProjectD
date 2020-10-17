@@ -7,8 +7,9 @@ import java.util.Iterator;
 public class DeckOfCards {
     static ArrayList<Card> deck = new ArrayList<Card>();//actual array
     static GameState state;
-    DeckOfCards(int numDecks, GameState state){
-        state = this.state;
+    protected static int cardCount;
+    DeckOfCards(int numDecks, GameState gameState){
+        state = gameState;
         state.setDrawPileNumCards(0);
         for(int i = 0; i<numDecks; i++){
             deck.add(new Card(1, 14));
@@ -209,5 +210,13 @@ public class DeckOfCards {
             }
         }
         state.setDrawPileTopCard(deck.get(0));
+    }
+
+    public Card getNextCard() { 
+        cardCount++;
+        return deck.get(cardCount);
+    }
+    public int getSize() {
+        return deck.size();
     }
 }
