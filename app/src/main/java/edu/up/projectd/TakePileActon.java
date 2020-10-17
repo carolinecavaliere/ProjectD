@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class TakePileActon {
 
     public boolean takePile(int playerID, GameState gameState) {
-        ArrayList<Card> card = gameState.getPlayPileCards();
+        ArrayList<Card> card = new ArrayList<>(gameState.getPlayPileCards());
         if (gameState.getPlayPileNumCards() > 0 && playerID == gameState.getTurn()) {
             if (playerID == 1) {
                 for (int i = 0; i < gameState.getPlayPileNumCards(); i++) {

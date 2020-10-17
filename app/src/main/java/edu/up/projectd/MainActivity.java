@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         text.getText().clear();
         //SwitchBaseCardsAction
         SwitchBaseCardsAction switchBaseCardsAction = new SwitchBaseCardsAction();
-        switchBaseCardsAction.switchBaseCards(1, firstInstance,
-                firstInstance.getP1Hand().get(1), firstInstance.getP1TopCards().get(0));
+        boolean blah = switchBaseCardsAction.switchBaseCards(1, firstInstance,
+                firstInstance.getP1Hand().get(0), firstInstance.getP1TopCards().get(0));
         text.setText(text.getText() + "Player 1 switch the second card in their hand with the" +
                 " the first card on the field.");
         //PlayCardAction

@@ -12,8 +12,8 @@ public class SwitchBaseCardsAction {
 
         if (playerID == gameState.getTurn()) {
             if (playerID == 1) {
-                handCards = gameState.getP1Hand();
-                botCards = gameState.getP1BottomCards();
+                handCards = new ArrayList<Card>(gameState.getP1Hand());
+                botCards = new ArrayList<Card>(gameState.getP1BottomCards());
                 index = botCards.indexOf(bot);
                 botCards.set(index, hand);
                 index = handCards.indexOf(hand);
