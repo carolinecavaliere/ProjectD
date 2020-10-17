@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
+ * @Author: Chloe Gan
  * Citation: https://www.youtube.com/watch?v=_AUtutrnEP8
  */
 public class Card extends ArrayList<Card> {
@@ -89,6 +90,10 @@ public class Card extends ArrayList<Card> {
 
     }
 
+    /**
+     * Print's out the card rank and suit
+     * @return String
+     */
     public String toString() {
         return " Card Rank: " + getRank()+ " " +
                 "Card Suit: " + getSuit();
