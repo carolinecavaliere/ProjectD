@@ -31,6 +31,7 @@ public class Card extends ArrayList<Card> {
 
     // getter for card rank
     public int getRank() { return rank; }
+
     // setter for card rank
     public void setRank(int rank) {
         List<Integer> validRank = getValidRank();
@@ -86,6 +87,10 @@ public class Card extends ArrayList<Card> {
         this.rank = orig.getRank();
 
 
+    }
+
+    public String toString() {
+        return "Card Rank: " + getRank()+"\n" + "Card Suit: " + getSuit()+"\n";
     }
 
     @NonNull
