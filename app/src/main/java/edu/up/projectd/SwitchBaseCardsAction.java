@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class SwitchBaseCardsAction {
 
     public boolean switchBaseCards(int playerID, GameState gameState, Card hand, Card bot) {
-
         int index;
         ArrayList<Card> handCards;
         ArrayList<Card> topCards;
