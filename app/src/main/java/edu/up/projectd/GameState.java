@@ -252,6 +252,118 @@ public class GameState {
         this.playPileNumCards = playPileNumCards;
     }
 
+    public void addToPlayPile(Card add){
+        playPileCards.add(add);
+    }
+
+    public void addToP1Hand(Card add){
+        p1Hand.add(add);
+    }
+
+    public void addToP2Hand(Card add){
+        p2Hand.add(add);
+    }
+
+    public void addToP3Hand(Card add){
+        p3Hand.add(add);
+    }
+
+    public void addToP4Hand(Card add){
+        p4Hand.add(add);
+    }
+
+    public void addToP1TopCards(Card add){
+        p1TopCards.add(add);
+    }
+
+    public void addToP2TopCards(Card add){
+        p2TopCards.add(add);
+    }
+
+    public void addToP3TopCards(Card add){
+        p3TopCards.add(add);
+    }
+
+    public void addToP4TopCards(Card add){
+        p4TopCards.add(add);
+    }
+
+    public void addToP1Bottom(Card add){
+        p1BottomCards.add(add);
+    }
+
+    public void addToP2Bottom(Card add){
+        p2BottomCards.add(add);
+    }
+
+    public void addToP3Bottom(Card add){
+        p3BottomCards.add(add);
+    }
+
+    public void addToP4Bottom(Card add){
+        p4BottomCards.add(add);
+    }
+
+    public void addToSelectedCards(Card add){
+        selectedCards.add(add);
+    }
+
+    public void removeFromPlayPile(Card remove){
+        playPileCards.remove(remove);
+    }
+
+    public void removeFromP1Hand(Card remove){
+        p1Hand.remove(remove);
+    }
+
+    public void removeFromP2Hand(Card remove){
+        p2Hand.remove(remove);
+    }
+
+    public void removeFromP3Hand(Card remove){
+        p3Hand.remove(remove);
+    }
+
+    public void removeFromP4Hand(Card remove){
+        p4Hand.remove(remove);
+    }
+
+    public void removeFromP1TopCards(Card remove){
+        p1TopCards.remove(remove);
+    }
+
+    public void removeFromP2TopCards(Card remove){
+        p2TopCards.remove(remove);
+    }
+
+    public void removeFromP3TopCards(Card remove){
+        p3TopCards.remove(remove);
+    }
+
+    public void removeFromP4TopCards(Card remove){
+        p4TopCards.remove(remove);
+    }
+
+    public void removeFromP1Bottom(Card remove){
+        p1BottomCards.remove(remove);
+    }
+
+    public void removeFromP2Bottom(Card remove){
+        p2BottomCards.remove(remove);
+    }
+
+    public void removeFromP3Bottom(Card remove){
+        p3BottomCards.remove(remove);
+    }
+
+    public void removeFromP4Bottom(Card remove){
+        p4BottomCards.remove(remove);
+    }
+
+    public void removeFromSelectedCards(Card remove){
+        selectedCards.remove(remove);
+    }
+
     private int playPileNumCards;
 
     public GameState(int numPlayers)
