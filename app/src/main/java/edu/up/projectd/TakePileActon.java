@@ -9,30 +9,38 @@ public class TakePileActon {
         if (gameState.getPlayPileNumCards() > 0 && playerID == gameState.getTurn()) {
             if (playerID == 1) {
                 for (int i = 0; i < gameState.getPlayPileNumCards(); i++) {
-                    card.add(gameState.getPlayPileCards().get(i));
+                    gameState.addToP1Hand(gameState.getPlayPileCards().get(i));
                 }
-                gameState.setP1Hand(card);
+                while (gameState.getPlayPileCards().get(0)!=null){
+                        gameState.removeFromPlayPile(0);
+                }
                 return true;
             }
             else if (playerID == 2) {
                 for (int i = 0; i < gameState.getPlayPileNumCards(); i++) {
-                    card.add(gameState.getPlayPileCards().get(i));
+                    gameState.addToP2Hand(gameState.getPlayPileCards().get(i));
                 }
-                gameState.setP2Hand(card);
+                while (gameState.getPlayPileCards().get(0)!=null){
+                    gameState.removeFromPlayPile(0);
+                }
                 return true;
             }
             else if (playerID == 3) {
                 for (int i = 0; i < gameState.getPlayPileNumCards(); i++) {
-                    card.add(gameState.getPlayPileCards().get(i));
+                    gameState.addToP3Hand(gameState.getPlayPileCards().get(i));
                 }
-                gameState.setP3Hand(card);
+                while (gameState.getPlayPileCards().get(0)!=null){
+                    gameState.removeFromPlayPile(0);
+                }
                 return true;
             }
             else if (playerID == 4) {
                 for (int i = 0; i < gameState.getPlayPileNumCards(); i++) {
-                    card.add(gameState.getPlayPileCards().get(i));
+                    gameState.addToP4Hand(gameState.getPlayPileCards().get(i));
                 }
-                gameState.setP4Hand(card);
+                while (gameState.getPlayPileCards().get(0)!=null){
+                    gameState.removeFromPlayPile(0);
+                }
                 return true;
             }
             else {

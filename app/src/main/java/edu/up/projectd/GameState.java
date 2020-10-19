@@ -312,6 +312,10 @@ public class GameState {
         playPileCards.remove(remove);
     }
 
+    public void removeFromPlayPile(int remove){
+        playPileCards.remove(remove);
+    }
+
     public void removeFromP1Hand(Card remove){
         p1Hand.remove(remove);
     }
