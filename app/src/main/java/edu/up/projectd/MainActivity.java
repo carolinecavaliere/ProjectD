@@ -51,10 +51,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //TakePileAction
         TakePileAction takePileAction = new TakePileAction();
         takePileAction.takePile(1, firstInstance);
-        text.setText(text.getText() + "Player 1 has taken the play pile into their hand.");
+        text.setText(text.getText() + "Player 1 has taken the play pile into their hand. \n");
+
+        //thirdInstance and FourthInstance
+        GameState thirdInstance = new GameState(2);
+        GameState fourthInstance = new GameState(thirdInstance);
 
         //toString
-        text.setText(text.getText() + "\n\n");
-        text.setText(text.getText() + "Altered game state: \n" + firstInstance.toString());
+        text.setText(text.getText() + "\nSecondInstance: \n" + secondInstance.toString());
+        text.setText(text.getText() + "\nFourthInstance: \n" + fourthInstance.toString());
     }
 }
