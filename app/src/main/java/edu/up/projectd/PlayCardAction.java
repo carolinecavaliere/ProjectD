@@ -4,66 +4,51 @@ package edu.up.projectd;
 import java.util.ArrayList;
 
 public class PlayCardAction {
-    public boolean playCard(int playerId, ArrayList<Card> cardsToPlay, GameState state) {
-        if (state.getTurn() != playerId)//not a valid move if it is not that player's turn
-        {
+    public boolean playCard(int playerId, GameState state) {
+        if (state.getTurn() != playerId) {//not a valid move if it is not that player's turn
             return false;
         }
-        else if (state.getCardSelected() == false)//not a valid move if a card isn't selected
-        {
+        else if (state.getCardSelected() == false) {//not a valid move if a card isn't selected
             return false;
         }
-        else if (cardsToPlay.size() > 1) //not a valid move if multiple cards are selected but not the same rank
-        {
-            for (int i = 0; i < cardsToPlay.size() - 1; i++)
-            {
-                if (cardsToPlay.get(i).getRank() != cardsToPlay.get(i + 1).getRank())
-                {
+        else if (state.getSelectedCards().size() > 1) {//not a valid move if multiple cards are selected but not the same rank
+            for (int i = 0; i < state.getSelectedCards().size() - 1; i++) {
+                if (state.getSelectedCards().get(i).getRank() != state.getSelectedCards().get(i + 1).getRank()) {
                     return false;
                 }
             }
         }
         else {
-            for (int i = 0; i < cardsToPlay.size(); i++) {
-                if (cardsToPlay.get(i).getRank() < state.getPlayPileTopCard().getRank()) {
-                    if (cardsToPlay.get(i).getRank() != 2 && cardsToPlay.get(i).getRank() != 10) {
+            for (int i = 0; i < state.getSelectedCards().size(); i++) {
+                if (state.getSelectedCards().get(i).getRank() < state.getPlayPileTopCard().getRank()) {
+                    if (state.getSelectedCards().get(i).getRank() != 2 && state.getSelectedCards().get(i).getRank() != 10) {
                         return false;//not a valid move if the card is less than the one on the play pile and not of rank 2 or 10
                     }
-                } else {
-                    ArrayList<Card> temp;
-                    ArrayList<Card> tempHand;
+                }
+                else {
                     if (playerId == 1) {
-                        tempHand = new ArrayList<Card>(state.getP1Hand());
-                        temp = new ArrayList<Card>(state.getPlayPileCards());
-                        temp.add(cardsToPlay.get(i));
-                        tempHand.remove(cardsToPlay.get(i));
-                        state.setP1Hand(temp);
-                        state.setP1Hand(tempHand);
-                        state.setPlayPileCards(temp);
-                    } else if (playerId == 2) {
-                        tempHand = new ArrayList<Card>(state.getP2Hand());
-                        temp = new ArrayList<Card>(state.getPlayPileCards());
-                        temp.add(cardsToPlay.get(i));
-                        tempHand.remove(cardsToPlay.get(i));
-                        state.setP2Hand(temp);
-                        state.setP2Hand(tempHand);
-                        state.setPlayPileCards(temp);
-                    } else if (playerId == 3) {
-                        tempHand = new ArrayList<Card>(state.getP3Hand());
-                        temp = new ArrayList<Card>(state.getPlayPileCards());
-                        temp.add(cardsToPlay.get(i));
-                        tempHand.remove(cardsToPlay.get(i));
-                        state.setP3Hand(temp);
-                        state.setP3Hand(tempHand);
-                        state.setPlayPileCards(temp);
-                    } else if (playerId == 4) {
-                        tempHand = new ArrayList<Card>(state.getP4Hand());
-                        temp = new ArrayList<Card>(state.getPlayPileCards());
-                        temp.add(cardsToPlay.get(i));
-                        tempHand.remove(cardsToPlay.get(i));
-                        state.setP4Hand(temp);
-                        state.setP4Hand(tempHand);
-                        state.setPlayPileCards(temp);
+                        state.addToPlayPile(state.getSelectedCards().get(i));
+                        state.removeFromP1Hand(state.getSelectedCards().get(i));
+                        state.setPlayPileNumCards(state.getPlayPileNumCards()+1);
+                        state.setP1numCards(state.getP1numCards()-1);
+                    }
+                    else if (playerId == 2) {
+                        state.addToPlayPile(state.getSelectedCards().get(i));
+                        state.removeFromP2Hand(state.getSelectedCards().get(i));
+                        state.setPlayPileNumCards(state.getPlayPileNumCards()+1);
+                        state.setP2numCards(state.getP2numCards()-1);
+                    }
+                    else if (playerId == 3) {
+                        state.addToPlayPile(state.getSelectedCards().get(i));
+                        state.removeFromP3Hand(state.getSelectedCards().get(i));
+                        state.setPlayPileNumCards(state.getPlayPileNumCards()+1);
+                        state.setP3numCards(state.getP3numCards()-1);
+                    }
+                    else if (playerId == 4) {
+                        state.addToPlayPile(state.getSelectedCards().get(i));
+                        state.removeFromP4Hand(state.getSelectedCards().get(i));
+                        state.setPlayPileNumCards(state.getPlayPileNumCards()+1);
+                        state.setP4numCards(state.getP4numCards()-1);
                     }
                     return true;
                 }
