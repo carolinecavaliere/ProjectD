@@ -2,17 +2,18 @@ package edu.up.projectd;
 
 import java.util.ArrayList;
 
-public class TakePileActon {
+public class TakePileAction {
 
     public boolean takePile(int playerID, GameState gameState) {
-        ArrayList<Card> card = new ArrayList<>(gameState.getPlayPileCards());
         if (gameState.getPlayPileNumCards() > 0 && playerID == gameState.getTurn()) {
             if (playerID == 1) {
                 for (int i = 0; i < gameState.getPlayPileNumCards(); i++) {
                     gameState.addToP1Hand(gameState.getPlayPileCards().get(i));
+                    gameState.setP1numCards(gameState.getP1numCards() + 1);
                 }
-                while (gameState.getPlayPileCards().get(0)!=null){
-                        gameState.removeFromPlayPile(0);
+                for (int i = 0; i < gameState.getPlayPileNumCards(); i++) {
+                    gameState.removeFromPlayPile(0);
+                    gameState.setPlayPileNumCards(gameState.getPlayPileNumCards() - 1);
                 }
                 return true;
             }

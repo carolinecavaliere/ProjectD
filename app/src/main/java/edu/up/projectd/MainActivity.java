@@ -39,17 +39,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //first toString
         text.setText("Original game state: \n" + firstInstance.toString());
         //SwitchBaseCardsAction
-        text.setText(text.getText() + "Player 1 switch the second card in their hand with the" +
+        text.setText(text.getText() + "Player 1 switched the first card in their hand with the" +
                 " the first card on the field. \n");
-        //SwitchBaseCardsAction.switchBaseCards(1, firstInstance,
-               //firstInstance.getP1Hand().get(0), firstInstance.getP1TopCards().get(0));
+        SwitchBaseCardsAction switchBaseCardsAction = new SwitchBaseCardsAction();
+        switchBaseCardsAction.switchBaseCards(1, firstInstance,
+               firstInstance.getP1Hand().get(0), firstInstance.getP1TopCards().get(0));
         //PlayCardAction
 
         //SelectCardAction
 
         //TakePileAction
-        TakePileActon takePileActon = new TakePileActon();
-        takePileActon.takePile(1, firstInstance);
+        TakePileAction takePileAction = new TakePileAction();
+        takePileAction.takePile(1, firstInstance);
         text.setText(text.getText() + "Player 1 has taken the play pile into their hand.");
 
         //toString

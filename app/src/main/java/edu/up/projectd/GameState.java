@@ -44,6 +44,73 @@ public class GameState {
 
     private int drawPileNumCards;
 
+    private int playPileNumCards;
+
+    public GameState(int numPlayers)
+    {
+        this.numPlayers = numPlayers;
+        turn = 1;
+        playPileCards = new ArrayList<Card>();
+
+        p1TopCards = new ArrayList<Card>();
+        p1BottomCards = new ArrayList<Card>();
+
+        p2TopCards = new ArrayList<Card>();
+        p2BottomCards = new ArrayList<Card>();
+
+        p3TopCards = new ArrayList<Card>();
+        p3BottomCards = new ArrayList<Card>();
+
+        p4TopCards = new ArrayList<Card>();
+        p4BottomCards = new ArrayList<Card>();
+
+        p1Hand = new ArrayList<Card>();
+        p2Hand = new ArrayList<Card>();
+        p3Hand = new ArrayList<Card>();
+        p4Hand = new ArrayList<Card>();
+
+        if(this.numPlayers<=2)
+        {
+            deck = new DeckOfCards(1, this);
+        }
+        else
+        {
+            deck= new DeckOfCards(2, this);
+        }
+
+        //temp fix for dealDeck()
+        p1Hand.add(deck.getNextCard());
+        p1Hand.add(deck.getNextCard());
+        p1Hand.add(deck.getNextCard());
+        p1TopCards.add(deck.getNextCard());
+        p1TopCards.add(deck.getNextCard());
+        p1TopCards.add(deck.getNextCard());
+        p1BottomCards.add(deck.getNextCard());
+        p1BottomCards.add(deck.getNextCard());
+        p1BottomCards.add(deck.getNextCard());
+
+        p2Hand.add(deck.getNextCard());
+        p2Hand.add(deck.getNextCard());
+        p2Hand.add(deck.getNextCard());
+        p2TopCards.add(deck.getNextCard());
+        p2TopCards.add(deck.getNextCard());
+        p2TopCards.add(deck.getNextCard());
+        p2BottomCards.add(deck.getNextCard());
+        p2BottomCards.add(deck.getNextCard());
+        p2BottomCards.add(deck.getNextCard());
+
+        playPileTopCard = deck.getNextCard();
+        drawPileTopCard = deck.getNextCard();
+
+        playPileCards.add(playPileTopCard);
+
+        p1numCards = p1Hand.size();
+        p2numCards = p2Hand.size();
+        p3numCards = p3Hand.size();
+        p4numCards = p4Hand.size();
+        playPileNumCards = playPileCards.size();
+    }
+
     public ArrayList<Card> getSelectedCards() {
         return selectedCards;
     }
@@ -368,72 +435,6 @@ public class GameState {
         selectedCards.remove(remove);
     }
 
-    private int playPileNumCards;
-
-    public GameState(int numPlayers)
-    {
-        this.numPlayers = numPlayers;
-        int turn = 1;
-        playPileCards = new ArrayList<Card>();
-
-        p1TopCards = new ArrayList<Card>();
-        p1BottomCards = new ArrayList<Card>();
-
-        p2TopCards = new ArrayList<Card>();
-        p2BottomCards = new ArrayList<Card>();
-
-        p3TopCards = new ArrayList<Card>();
-        p3BottomCards = new ArrayList<Card>();
-
-        p4TopCards = new ArrayList<Card>();
-        p4BottomCards = new ArrayList<Card>();
-
-        p1Hand = new ArrayList<Card>();
-        p2Hand = new ArrayList<Card>();
-        p3Hand = new ArrayList<Card>();
-        p4Hand = new ArrayList<Card>();
-
-        if(this.numPlayers<=2)
-        {
-            deck = new DeckOfCards(1, this);
-        }
-        else
-        {
-            deck= new DeckOfCards(2, this);
-        }
-
-        //temp fix for dealDeck()
-        p1Hand.add(deck.getNextCard());
-        p1Hand.add(deck.getNextCard());
-        p1Hand.add(deck.getNextCard());
-        p1TopCards.add(deck.getNextCard());
-        p1TopCards.add(deck.getNextCard());
-        p1TopCards.add(deck.getNextCard());
-        p1BottomCards.add(deck.getNextCard());
-        p1BottomCards.add(deck.getNextCard());
-        p1BottomCards.add(deck.getNextCard());
-
-        p2Hand.add(deck.getNextCard());
-        p2Hand.add(deck.getNextCard());
-        p2Hand.add(deck.getNextCard());
-        p2TopCards.add(deck.getNextCard());
-        p2TopCards.add(deck.getNextCard());
-        p2TopCards.add(deck.getNextCard());
-        p2BottomCards.add(deck.getNextCard());
-        p2BottomCards.add(deck.getNextCard());
-        p2BottomCards.add(deck.getNextCard());
-
-        playPileTopCard = deck.getNextCard();
-        drawPileTopCard = deck.getNextCard();
-
-        playPileCards.add(playPileTopCard);
-
-        p1numCards = p1Hand.size();
-        p2numCards = p2Hand.size();
-        p3numCards = p3Hand.size();
-        p4numCards = p4Hand.size();
-        playPileNumCards = playPileCards.size();
-    }
     public GameState (GameState orig)//copy constructor
     {
         this.numPlayers = orig.getNumPlayers();
@@ -527,8 +528,8 @@ public class GameState {
         String ret =  "Number of Players: " + numPlayers + "\n" +
                 "Number of Cards in Draw Pile: " + drawPileNumCards + "\n" +
                 "Next Card in the Draw Pile: " + drawPileTopCard + "\n" +
-                "Number of Cards in Discard Pile: " + playPileNumCards + "\n" +
-                "Current Card in Discard Pile: " + playPileTopCard + "\n" +
+                "Number of Cards in Play Pile: " + playPileNumCards + "\n" +
+                "Current Card in Play Pile: " + playPileTopCard + "\n" +
 
                 "Player 1: \n"  +
                 "Number of Cards in Hand: " + p1numCards + "\n" +
