@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        firstInstance = new GameState(2);
-        secondInstance = new GameState(firstInstance);
+        GameState firstInstance = new GameState(2);
+        GameState secondInstance = new GameState(firstInstance);
 
         text.getText().clear();
 

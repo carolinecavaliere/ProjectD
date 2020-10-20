@@ -3,6 +3,7 @@ package edu.up.projectd;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class GameState {
 
@@ -443,35 +444,34 @@ public class GameState {
         this.p3numCards = orig.getP3numCards();
         this.p4numCards = orig.getP4numCards();
 
-        this.p1Hand = new ArrayList<>(orig.getP1Hand().size());
-        this.p2Hand = new ArrayList<>(orig.getP2Hand().size());
+        this.p1Hand = new ArrayList<Card>();
+        this.p2Hand = new ArrayList<Card>();
         this.p3Hand = new ArrayList<>(orig.getP3Hand().size());
         this.p4Hand = new ArrayList<>(orig.getP4Hand().size());
 
-        this.p1TopCards = new ArrayList<>(orig.getP1TopCards().size());
-        this.p2TopCards = new ArrayList<>(orig.getP2TopCards().size());
+        this.p1TopCards = new ArrayList<Card>();
+        this.p2TopCards = new ArrayList<Card>();
         this.p3TopCards = new ArrayList<>(orig.getP3TopCards().size());
         this.p4TopCards = new ArrayList<>(orig.getP4TopCards().size());
 
-        this.p1BottomCards = new ArrayList<>(orig.getP1BottomCards().size());
-        this.p2BottomCards = new ArrayList<>(orig.getP2BottomCards().size());
+        this.p1BottomCards = new ArrayList<Card>();
+        this.p2BottomCards = new ArrayList<Card>();
         this.p3BottomCards = new ArrayList<>(orig.getP3BottomCards().size());
         this.p4BottomCards = new ArrayList<>(orig.getP4BottomCards().size());
 
-
-        for(int i=0; i<p1Hand.size() ; i++)
+        for(int i=0; i< orig.getP1Hand().size() ; i++)
         {
             this.p1Hand.add(new Card(orig.getP1Hand().get(i)));
         }
-        for(int i=0; i<p2Hand.size() ; i++)
+        for(int i=0; i<orig.getP2Hand().size() ; i++)
         {
             this.p2Hand.add(new Card(orig.getP2Hand().get(i)));
         }
-        for(int i=0; i<p3Hand.size() ; i++)
+        for(int i=0; i<orig.getP3Hand().size() ; i++)
         {
             this.p3Hand.add(new Card(orig.getP3Hand().get(i)));
         }
-        for(int i=0; i<p4Hand.size() ; i++)
+        for(int i=0; i<orig.getP4Hand().size() ; i++)
         {
             this.p4Hand.add(new Card(orig.getP4Hand().get(i)));
         }
@@ -480,36 +480,36 @@ public class GameState {
 
         this.deck = new DeckOfCards(1, orig);
 
-        for(int i=0; i<p1TopCards.size() ; i++)
+        for(int i=0; i<orig.getP1TopCards().size() ; i++)
         {
             this.p1TopCards.add(new Card(orig.getP1TopCards().get(i)));
         }
-        for(int i=0; i<p2TopCards.size() ; i++)
+        for(int i=0; i<orig.getP2TopCards().size() ; i++)
         {
             this.p2TopCards.add(new Card(orig.getP2TopCards().get(i)));
         }
-        for(int i=0; i<p3TopCards.size() ; i++)
+        for(int i=0; i<orig.getP3TopCards().size() ; i++)
         {
             this.p3TopCards.add(new Card(orig.getP3TopCards().get(i)));
         }
-        for(int i=0; i<p4TopCards.size() ; i++)
+        for(int i=0; i<orig.getP4TopCards().size() ; i++)
         {
             this.p4TopCards.add(new Card(orig.getP4TopCards().get(i)));
         }
 
-        for(int i=0; i<p1BottomCards.size() ; i++)
+        for(int i=0; i<orig.getP1BottomCards().size() ; i++)
         {
             this.p1BottomCards.add(new Card(orig.getP1BottomCards().get(i)));
         }
-        for(int i=0; i<p2BottomCards.size() ; i++)
+        for(int i=0; i<orig.getP2BottomCards().size() ; i++)
         {
             this.p2BottomCards.add(new Card(orig.getP2BottomCards().get(i)));
         }
-        for(int i=0; i<p3BottomCards.size() ; i++)
+        for(int i=0; i<orig.getP3BottomCards().size() ; i++)
         {
             this.p3BottomCards.add(new Card(orig.getP3BottomCards().get(i)));
         }
-        for(int i=0; i<p4BottomCards.size() ; i++)
+        for(int i=0; i<orig.getP4BottomCards().size() ; i++)
         {
             this.p4BottomCards.add(new Card(orig.getP4BottomCards().get(i)));
         }

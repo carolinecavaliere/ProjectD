@@ -175,11 +175,8 @@ public class DeckOfCards {
         state.setDrawPileTopCard(deck.get(0));
     }
 
-    public Card getNextCard() { 
+    public Card getNextCard() {
         cardCount++;
         return deck.get(cardCount);
-    }
-    public int getSize() {
-        return deck.size();
     }
 }
