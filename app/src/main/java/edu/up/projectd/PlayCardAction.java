@@ -31,10 +31,11 @@ public class PlayCardAction {
                     state.setP1numCards(state.getP1numCards() - 1);
                     if (state.getP1Hand().size() < 3) {//adds new card to the player's hand
                         for (int j = state.getP1numCards(); j < 3; j++) {
-                            state.addToP1Hand(state.getDeck().getNextCard());
+                            state.getDeck().drawCard(1);
                         }
                         state.setP1numCards(3);
                     }
+                    state.clearSelectedCards();
                 } else if (playerId == 2) {
                     state.addToPlayPile(state.getSelectedCards().get(i));
                     state.setPlayPileTopCard(state.getSelectedCards().get(i));
@@ -47,6 +48,7 @@ public class PlayCardAction {
                         }
                         state.setP2numCards(3);
                     }
+                    state.clearSelectedCards();
                 } else if (playerId == 3) {
                     state.addToPlayPile(state.getSelectedCards().get(i));
                     state.setPlayPileTopCard(state.getSelectedCards().get(i));
@@ -59,6 +61,7 @@ public class PlayCardAction {
                         }
                         state.setP3numCards(3);
                     }
+                    state.clearSelectedCards();
                 } else if (playerId == 4) {
                     state.addToPlayPile(state.getSelectedCards().get(i));
                     state.setPlayPileTopCard(state.getSelectedCards().get(i));
@@ -71,6 +74,7 @@ public class PlayCardAction {
                         }
                         state.setP4numCards(3);
                     }
+                    state.clearSelectedCards();
                 }
                 return true;
             }

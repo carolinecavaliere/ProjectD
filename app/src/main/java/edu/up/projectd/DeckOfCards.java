@@ -81,7 +81,7 @@ public class DeckOfCards {
             deck.add(new Card(2, 2));
             deck.add(new Card(3, 2));
             deck.add(new Card(4, 2));
-            state.setDrawPileNumCards(state.getDrawPileNumCards()+52);
+            state.setDrawPileNumCards(state.getDrawPileNumCards() + 52);
         }
         ShuffleDeck(deck);
     }
@@ -223,5 +223,22 @@ public class DeckOfCards {
         cardCount++;
         state.setDrawPileNumCards(state.getDrawPileNumCards() - 1);
         return deck.get(cardCount);
+    }
+
+    public void drawCard(int player) {
+        state.setDrawPileNumCards(state.getDrawPileNumCards() - 1);
+        if (player == 1) {
+            state.addToP1Hand(state.getDrawPileTopCard());
+        }
+        else if (player == 2) {
+            state.addToP2Hand(state.getDrawPileTopCard());
+        }
+        else if (player == 3) {
+            state.addToP3Hand(state.getDrawPileTopCard());
+        }
+        else if (player == 4) {
+            state.addToP4Hand(state.getDrawPileTopCard());
+        }
+        state.setDrawPileTopCard(state.getDeck().getNextCard());
     }
 }

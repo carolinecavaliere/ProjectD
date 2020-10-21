@@ -220,6 +220,9 @@ public class GameState {
     public void setSelectedCards(ArrayList<Card> selectedCards) {
         this.selectedCards = new ArrayList<Card>(selectedCards);
     }
+    public void clearSelectedCards() {
+        this.selectedCards.clear();
+    }
 
     public int getNumPlayers() {
         return numPlayers;
@@ -311,6 +314,10 @@ public class GameState {
 
     public void setPlayPileCards(ArrayList<Card> playPileCards) {
         this.playPileCards = new ArrayList<Card>(playPileCards);
+    }
+    public void clearPlayPileCards(){
+        this.playPileCards.clear();
+        this.playPileTopCard = null;
     }
 
     public void setDeck(DeckOfCards deck) {
