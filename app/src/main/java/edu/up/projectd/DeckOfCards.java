@@ -128,7 +128,7 @@ public class DeckOfCards {
                 state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
             }
         }
-        for (int i = 0; i<6; i++){
+        for (int i = 0; i<3; i++){
             if(state.getNumPlayers()==2){
                 state.addToP1Hand(deck.get(0));
                 deck.remove(0);
@@ -170,6 +170,41 @@ public class DeckOfCards {
                 deck.remove(0);
                 state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
                 state.setP3numCards(state.getP3numCards()+1);
+            }
+        }
+        for (int i = 0; i<3; i++){
+            if(state.getNumPlayers()==2){
+                state.addToP1TopCards(deck.get(0));
+                deck.remove(0);
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.addToP2TopCards(deck.get(0));
+                deck.remove(0);
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+            }
+            else if (state.getNumPlayers()==3){
+                state.addToP1TopCards(deck.get(0));
+                deck.remove(0);
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.addToP2TopCards(deck.get(0));
+                deck.remove(0);
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.addToP3TopCards(deck.get(0));
+                deck.remove(0);
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+            }
+            else{
+                state.addToP1TopCards(deck.get(0));
+                deck.remove(0);
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.addToP2TopCards(deck.get(0));
+                deck.remove(0);
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.addToP3TopCards(deck.get(0));
+                deck.remove(0);
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
+                state.addToP4TopCards(deck.get(0));
+                deck.remove(0);
+                state.setDrawPileNumCards(state.getDrawPileNumCards()-1);
             }
         }
         state.addToPlayPile(deck.get(0));

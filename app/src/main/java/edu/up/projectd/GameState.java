@@ -81,37 +81,37 @@ public class GameState {
         }
 
         //temp fix for dealDeck()
-        p1Hand.add(new Card(1,14)); //Assigned a specific card to test purposes
-        p1Hand.add(deck.getNextCard());
-        p1Hand.add(deck.getNextCard());
-        p1TopCards.add(deck.getNextCard());
-        p1TopCards.add(deck.getNextCard());
-        p1TopCards.add(deck.getNextCard());
-        p1BottomCards.add(deck.getNextCard());
-        p1BottomCards.add(deck.getNextCard());
-        p1BottomCards.add(deck.getNextCard());
-
-        p2Hand.add(deck.getNextCard());
-        p2Hand.add(deck.getNextCard());
-        p2Hand.add(deck.getNextCard());
-        p2TopCards.add(deck.getNextCard());
-        p2TopCards.add(deck.getNextCard());
-        p2TopCards.add(deck.getNextCard());
-        p2BottomCards.add(deck.getNextCard());
-        p2BottomCards.add(deck.getNextCard());
-        p2BottomCards.add(deck.getNextCard());
-
-        playPileTopCard = deck.getNextCard();
-        drawPileTopCard = deck.getNextCard();
-
-        playPileCards.add(playPileTopCard);
-
-        p1numCards = p1Hand.size();
-        p2numCards = p2Hand.size();
-        p3numCards = p3Hand.size();
-        p4numCards = p4Hand.size();
-        playPileNumCards = playPileCards.size();
-        //deck.DealDeck();
+//        p1Hand.add(new Card(1,14)); //Assigned a specific card to test purposes
+//        p1Hand.add(deck.getNextCard());
+//        p1Hand.add(deck.getNextCard());
+//        p1TopCards.add(deck.getNextCard());
+//        p1TopCards.add(deck.getNextCard());
+//        p1TopCards.add(deck.getNextCard());
+//        p1BottomCards.add(deck.getNextCard());
+//        p1BottomCards.add(deck.getNextCard());
+//        p1BottomCards.add(deck.getNextCard());
+//
+//        p2Hand.add(deck.getNextCard());
+//        p2Hand.add(deck.getNextCard());
+//        p2Hand.add(deck.getNextCard());
+//        p2TopCards.add(deck.getNextCard());
+//        p2TopCards.add(deck.getNextCard());
+//        p2TopCards.add(deck.getNextCard());
+//        p2BottomCards.add(deck.getNextCard());
+//        p2BottomCards.add(deck.getNextCard());
+//        p2BottomCards.add(deck.getNextCard());
+//
+//        playPileTopCard = deck.getNextCard();
+//        drawPileTopCard = deck.getNextCard();
+//
+//        playPileCards.add(playPileTopCard);
+//
+//        p1numCards = p1Hand.size();
+//        p2numCards = p2Hand.size();
+//        p3numCards = p3Hand.size();
+//        p4numCards = p4Hand.size();
+//        playPileNumCards = playPileCards.size();
+        deck.DealDeck();
     }
 
     public GameState (GameState orig)//copy constructor
