@@ -44,12 +44,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SwitchBaseCardsAction switchBaseCardsAction = new SwitchBaseCardsAction();
         switchBaseCardsAction.switchBaseCards(1, firstInstance,
                firstInstance.getP1Hand().get(0), firstInstance.getP1TopCards().get(0));
+
+        //SelectedCardAction
+            // choose a random number between 0 and number of cards in P1 hand
+        int randNum = (int)(Math.random()*(firstInstance.getP1numCards()) + 0);
+        Card randomCard = firstInstance.getP1Hand().get(randNum); // get a random card from p1Hand
+        selectCardAction = new SelectCardAction(); // initialize the global variable
+        selectCardAction.selectCard(1, firstInstance, randomCard); // call method.
+        text.setText(text.getText() + "Player 1 has selected a " + randomCard);
+
         //PlayCardAction
-        PlayCardAction playCardAction = new PlayCardAction();
+        playCardAction = new PlayCardAction();
         playCardAction.playCard(1, firstInstance);
         text.setText(text.getText() + "Player 1 has played a " + firstInstance.getPlayPileTopCard());
-
-        //SelectCardAction
 
         //TakePileAction
         TakePileAction takePileAction = new TakePileAction();
