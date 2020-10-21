@@ -13,15 +13,18 @@ public class PlayCardAction {
     public boolean playCard(int playerId, GameState state) {
         if (state.getTurn() != playerId) {//not a valid move if it is not that player's turn
             return false;
-        } else if (state.getSelectedCards().isEmpty()) {//not a valid move if a card isn't selected
+        }
+        else if (state.getSelectedCards().isEmpty()) {//not a valid move if a card isn't selected
             return false;
-        } else if (state.getSelectedCards().size() > 1) {//not a valid move if multiple cards are selected but not the same rank
+        }
+        else if (state.getSelectedCards().size() > 1) {//not a valid move if multiple cards are selected but not the same rank
             for (int i = 0; i < state.getSelectedCards().size() - 1; i++) {
                 if (state.getSelectedCards().get(i).getRank() != state.getSelectedCards().get(i + 1).getRank()) {
                     return false;
                 }
             }
-        } else {
+        }
+        else {
             for (int i = 0; i < state.getSelectedCards().size(); i++) {
                 if (playerId == 1) {
                     state.addToPlayPile(state.getSelectedCards().get(i));
@@ -36,7 +39,8 @@ public class PlayCardAction {
                         state.setP1numCards(3);
                     }
                     state.clearSelectedCards();
-                } else if (playerId == 2) {
+                }
+                else if (playerId == 2) {
                     state.addToPlayPile(state.getSelectedCards().get(i));
                     state.setPlayPileTopCard(state.getSelectedCards().get(i));
                     state.removeFromP2Hand(state.getSelectedCards().get(i));
@@ -49,7 +53,8 @@ public class PlayCardAction {
                         state.setP2numCards(3);
                     }
                     state.clearSelectedCards();
-                } else if (playerId == 3) {
+                }
+                else if (playerId == 3) {
                     state.addToPlayPile(state.getSelectedCards().get(i));
                     state.setPlayPileTopCard(state.getSelectedCards().get(i));
                     state.removeFromP3Hand(state.getSelectedCards().get(i));
@@ -62,7 +67,8 @@ public class PlayCardAction {
                         state.setP3numCards(3);
                     }
                     state.clearSelectedCards();
-                } else if (playerId == 4) {
+                }
+                else if (playerId == 4) {
                     state.addToPlayPile(state.getSelectedCards().get(i));
                     state.setPlayPileTopCard(state.getSelectedCards().get(i));
                     state.removeFromP4Hand(state.getSelectedCards().get(i));
