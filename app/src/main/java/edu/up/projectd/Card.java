@@ -95,8 +95,38 @@ public class Card extends ArrayList<Card> {
      * @return String
      */
     public String toString() {
-        return " Card Rank: " + getRank()+ " " +
-                "Card Suit: " + getSuit();
+        String rank;
+        String suit;
+        if(getRank()<=10){
+            rank = ""+getRank();
+        }
+        else if(getRank()==11){
+            rank = "Jack";
+        }
+        else if(getRank()==12){
+            rank = "Queen";
+        }
+        else if(getRank()==13){
+            rank = "King";
+        }
+        else{
+            rank = "Ace";
+        }
+
+        if(getSuit() == 1){
+            suit = "Diamonds";
+        }
+        else if(getSuit()==2){
+            suit = "Hearts";
+        }
+        else if(getSuit()==3){
+            suit = "Clubs";
+        }
+        else{
+            suit = "Spades";
+        }
+
+        return rank+" of "+suit;
     }
 
     @NonNull
