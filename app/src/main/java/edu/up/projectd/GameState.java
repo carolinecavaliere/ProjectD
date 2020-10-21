@@ -82,7 +82,7 @@ public class GameState {
         }
 
         //temp fix for dealDeck()
-        p1Hand.add(new Card(1,14)); //Assigned specific card to test purposes
+        p1Hand.add(new Card(1,14)); //Assigned a specific card to test purposes
         p1Hand.add(deck.getNextCard());
         p1Hand.add(deck.getNextCard());
         p1TopCards.add(deck.getNextCard());
