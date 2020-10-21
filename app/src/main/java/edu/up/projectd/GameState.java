@@ -7,6 +7,7 @@ import java.util.Collections;
 
 /**
  * @Author: Chloe Gan, Nathaniel Pon, Jimi Hayes, Caroline Cavaliere
+ * 10/20/2020
  */
 public class GameState {
 
@@ -49,6 +50,11 @@ public class GameState {
 
     private int playPileNumCards;
 
+    /**
+     * Default constructor for the GameState
+     *
+     * @param numPlayers
+     */
     public GameState(int numPlayers)
     {
         this.numPlayers = numPlayers;
@@ -82,41 +88,14 @@ public class GameState {
         {
             deck= new DeckOfCards(2, this);
         }
-
-        //temp fix for dealDeck()
-//        p1Hand.add(new Card(1,14)); //Assigned a specific card to test purposes
-//        p1Hand.add(deck.getNextCard());
-//        p1Hand.add(deck.getNextCard());
-//        p1TopCards.add(deck.getNextCard());
-//        p1TopCards.add(deck.getNextCard());
-//        p1TopCards.add(deck.getNextCard());
-//        p1BottomCards.add(deck.getNextCard());
-//        p1BottomCards.add(deck.getNextCard());
-//        p1BottomCards.add(deck.getNextCard());
-//
-//        p2Hand.add(deck.getNextCard());
-//        p2Hand.add(deck.getNextCard());
-//        p2Hand.add(deck.getNextCard());
-//        p2TopCards.add(deck.getNextCard());
-//        p2TopCards.add(deck.getNextCard());
-//        p2TopCards.add(deck.getNextCard());
-//        p2BottomCards.add(deck.getNextCard());
-//        p2BottomCards.add(deck.getNextCard());
-//        p2BottomCards.add(deck.getNextCard());
-//
-//        playPileTopCard = deck.getNextCard();
-//        drawPileTopCard = deck.getNextCard();
-//
-//        playPileCards.add(playPileTopCard);
-//
-//        p1numCards = p1Hand.size();
-//        p2numCards = p2Hand.size();
-//        p3numCards = p3Hand.size();
-//        p4numCards = p4Hand.size();
-//        playPileNumCards = playPileCards.size();
         deck.DealDeck();
     }
 
+    /**
+     * Deep Copy constructor for GameState
+     *
+     * @param orig
+     */
     public GameState (GameState orig)//copy constructor
     {
         this.numPlayers = orig.getNumPlayers();
@@ -537,7 +516,10 @@ public class GameState {
         selectedCards.remove(remove);
     }
 
-
+    /**
+     * toString method that outputs GameState data to a string
+     * @return
+     */
     public String toString() {
         String ret =  "Number of Players: " + numPlayers + "\n" +
                 "Number of Cards in Draw Pile: " + drawPileNumCards + "\n" +

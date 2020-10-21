@@ -10,6 +10,14 @@ import java.util.ArrayList;
  * adds a new card to the player's hand when appropriate after they play a legal card(s)
  */
 public class PlayCardAction {
+
+    /**
+     * Plays selected card(s)
+     *
+     * @param playerId
+     * @param state
+     * @return
+     */
     public boolean playCard(int playerId, GameState state) {
         if (state.getTurn() != playerId) {//not a valid move if it is not that player's turn
             return false;
