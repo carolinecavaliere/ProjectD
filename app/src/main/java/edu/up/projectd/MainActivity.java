@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //first toString
         text.setText("Original game state: \n" + firstInstance.toString());
+
         //SwitchBaseCardsAction
         text.setText(text.getText() + "Player 1 switched the first card in their hand with the" +
                 " the first card on the field. \n");
@@ -49,7 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                firstInstance.getP1Hand().get(0), firstInstance.getP1TopCards().get(0));
 
         //SelectedCardAction
-        // choose a random number between 0 and number of cards in P1 hand
+        //choose a random number between 0 and number of cards in P1 hand
+        //Note: May have to run a few times for the requirement of this method to be met
         Card selectedCard = firstInstance.getP1Hand().get(0); // get card from p1Hand
         selectCardAction = new SelectCardAction(); // initialize the global variable
         selectCardAction.selectCard(1, firstInstance, selectedCard);

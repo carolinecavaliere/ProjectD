@@ -8,6 +8,13 @@ import java.util.ArrayList;
  */
 public class TakePileAction {
 
+    /**
+     * Takes the current playPile and puts into the current player's hand
+     * @Author Nathaniel Pon
+     * @param playerID
+     * @param gameState
+     * @return
+     */
     public boolean takePile(int playerID, GameState gameState) {
         if (gameState.getPlayPileNumCards() > 0 && playerID == gameState.getTurn()) {
             if (playerID == 1) {
