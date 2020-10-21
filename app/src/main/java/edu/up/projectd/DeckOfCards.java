@@ -172,6 +172,10 @@ public class DeckOfCards {
                 state.setP3numCards(state.getP3numCards()+1);
             }
         }
+        state.addToPlayPile(deck.get(0));
+        deck.remove(0);
+        state.setPlayPileNumCards(1);
+        state.setPlayPileTopCard(state.getPlayPileCards().get(0));
         state.setDrawPileTopCard(deck.get(0));
     }
 

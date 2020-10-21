@@ -112,6 +112,7 @@ public class GameState {
         p3numCards = p3Hand.size();
         p4numCards = p4Hand.size();
         playPileNumCards = playPileCards.size();
+        //deck.DealDeck();
     }
 
     public ArrayList<Card> getSelectedCards() {
