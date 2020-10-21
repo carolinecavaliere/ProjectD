@@ -13,6 +13,8 @@ public class SwitchBaseCardsAction {
      * Switches a selected card from a player's hand and swaps it with a selected
      * card from a player's top card
      *
+     * @Author Nathaniel Pon
+     * 
      * @param playerID
      * @param gameState
      * @param hand

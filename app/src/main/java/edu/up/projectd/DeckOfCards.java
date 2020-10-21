@@ -13,13 +13,6 @@ public class DeckOfCards {
     static ArrayList<Card> deck = new ArrayList<Card>();//actual array
     static GameState state;
     protected static int cardCount;
-
-    /**
-     * Constructor for the deck of cards
-     *
-     * @param numDecks
-     * @param gameState
-     */
     DeckOfCards(int numDecks, GameState gameState){
         state = gameState;
         state.setDrawPileNumCards(0);
@@ -93,10 +86,6 @@ public class DeckOfCards {
         ShuffleDeck(deck);
     }
 
-    /**
-     * Deep copy constructor for DeckOfCards
-     * @param orig
-     */
     public DeckOfCards(DeckOfCards orig){
         deck = new ArrayList<Card>();
         for(int i = 0; i<orig.deck.size(); i++){
@@ -104,18 +93,10 @@ public class DeckOfCards {
             this.state = orig.state;
         }
     }
-
-    /**
-     * Shuffles the deck
-     * @param myDeck
-     */
     public static void ShuffleDeck(ArrayList<Card> myDeck){
         Collections.shuffle(myDeck);
     }
 
-    /**
-     * Deals the starting cards to each of the players
-     */
     public static void DealDeck(){
         for (int i=0; i<3; i++){
             if(state.getNumPlayers()==2){
@@ -239,21 +220,12 @@ public class DeckOfCards {
         state.setDrawPileNumCards(deck.size());
     }
 
-    /**
-     * Extra method for drawing a Card (Obsolete)
-     * @return
-     */
     public Card getNextCard() {
         cardCount++;
         state.setDrawPileNumCards(state.getDrawPileNumCards() - 1);
         return deck.get(cardCount);
     }
 
-    /**
-     * Draws the card from the deck. Adds the current DrawPileTopCard to the player's
-     * hand and removes that card from the deck.
-     * @param player
-     */
     public void drawCard(int player) {
         if (player == 1) {
             state.addToP1Hand(state.getDrawPileTopCard());
