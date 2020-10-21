@@ -162,7 +162,7 @@ public class GameState {
 
         this.turn = orig.getTurn();
 
-        this.deck = new DeckOfCards(orig.deck);
+        this.deck = new DeckOfCards(1,orig);
 
         for(int i=0; i<orig.getP1TopCards().size() ; i++)
         {
@@ -542,7 +542,6 @@ public class GameState {
 
     public String toString() {
         String ret =  "Number of Players: " + numPlayers + "\n" +
-                "Number of Cards in Draw Pile: " + drawPileNumCards + "\n" +
                 "Next Card in the Draw Pile: " + drawPileTopCard + "\n" +
                 "Number of Cards in Play Pile: " + playPileNumCards + "\n" +
                 "Current Card in Play Pile: " + playPileTopCard + "\n" +
