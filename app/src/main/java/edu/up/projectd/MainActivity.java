@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         GameState fourthInstance = new GameState(thirdInstance);
 
         //toString
+        text.setText(text.getText()+"\nFirstInstance: \n" + firstInstance.toString());
         text.setText(text.getText() + "\nSecondInstance: \n" + secondInstance.toString());
         text.setText(text.getText() + "\nFourthInstance: \n" + fourthInstance.toString());
     }

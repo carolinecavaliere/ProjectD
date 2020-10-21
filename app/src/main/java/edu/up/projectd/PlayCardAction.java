@@ -28,24 +28,28 @@ public class PlayCardAction {
                 else {
                     if (playerId == 1) {
                         state.addToPlayPile(state.getSelectedCards().get(i));
+                        state.setPlayPileTopCard(state.getSelectedCards().get(i));
                         state.removeFromP1Hand(state.getSelectedCards().get(i));
                         state.setPlayPileNumCards(state.getPlayPileNumCards()+1);
                         state.setP1numCards(state.getP1numCards()-1);
                     }
                     else if (playerId == 2) {
                         state.addToPlayPile(state.getSelectedCards().get(i));
+                        state.setPlayPileTopCard(state.getSelectedCards().get(i));
                         state.removeFromP2Hand(state.getSelectedCards().get(i));
                         state.setPlayPileNumCards(state.getPlayPileNumCards()+1);
                         state.setP2numCards(state.getP2numCards()-1);
                     }
                     else if (playerId == 3) {
                         state.addToPlayPile(state.getSelectedCards().get(i));
+                        state.setPlayPileTopCard(state.getSelectedCards().get(i));
                         state.removeFromP3Hand(state.getSelectedCards().get(i));
                         state.setPlayPileNumCards(state.getPlayPileNumCards()+1);
                         state.setP3numCards(state.getP3numCards()-1);
                     }
                     else if (playerId == 4) {
                         state.addToPlayPile(state.getSelectedCards().get(i));
+                        state.setPlayPileTopCard(state.getSelectedCards().get(i));
                         state.removeFromP4Hand(state.getSelectedCards().get(i));
                         state.setPlayPileNumCards(state.getPlayPileNumCards()+1);
                         state.setP4numCards(state.getP4numCards()-1);
