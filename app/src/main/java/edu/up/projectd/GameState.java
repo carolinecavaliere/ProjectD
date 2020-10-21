@@ -38,7 +38,6 @@ public class GameState {
     private ArrayList<Card> playPileCards;
 
     private ArrayList<Card> selectedCards; // array of selected cards
-    private Boolean cardSelected; // checks to see if a card is selected or not
 
     private Card drawPileTopCard;
     private Card playPileTopCard;
@@ -115,20 +114,108 @@ public class GameState {
         //deck.DealDeck();
     }
 
+    public GameState (GameState orig)//copy constructor
+    {
+        this.numPlayers = orig.getNumPlayers();
+        this.p1numCards = orig.getP1numCards();
+        this.p2numCards = orig.getP2numCards();
+        this.p3numCards = orig.getP3numCards();
+        this.p4numCards = orig.getP4numCards();
+
+        this.p1Hand = new ArrayList<Card>();
+        this.p2Hand = new ArrayList<Card>();
+        this.p3Hand = new ArrayList<>(orig.getP3Hand().size());
+        this.p4Hand = new ArrayList<>(orig.getP4Hand().size());
+
+        this.p1TopCards = new ArrayList<Card>();
+        this.p2TopCards = new ArrayList<Card>();
+        this.p3TopCards = new ArrayList<>(orig.getP3TopCards().size());
+        this.p4TopCards = new ArrayList<>(orig.getP4TopCards().size());
+
+        this.p1BottomCards = new ArrayList<Card>();
+        this.p2BottomCards = new ArrayList<Card>();
+        this.p3BottomCards = new ArrayList<>(orig.getP3BottomCards().size());
+        this.p4BottomCards = new ArrayList<>(orig.getP4BottomCards().size());
+
+        this.selectedCards = new ArrayList<Card>(orig.getSelectedCards().size());
+
+        for(int i=0; i< orig.getP1Hand().size() ; i++)
+        {
+            this.p1Hand.add(new Card(orig.getP1Hand().get(i)));
+        }
+        for(int i=0; i<orig.getP2Hand().size() ; i++)
+        {
+            this.p2Hand.add(new Card(orig.getP2Hand().get(i)));
+        }
+        for(int i=0; i<orig.getP3Hand().size() ; i++)
+        {
+            this.p3Hand.add(new Card(orig.getP3Hand().get(i)));
+        }
+        for(int i=0; i<orig.getP4Hand().size() ; i++)
+        {
+            this.p4Hand.add(new Card(orig.getP4Hand().get(i)));
+        }
+
+        this.turn = orig.getTurn();
+
+        this.deck = new DeckOfCards(1, orig);
+
+        for(int i=0; i<orig.getP1TopCards().size() ; i++)
+        {
+            this.p1TopCards.add(new Card(orig.getP1TopCards().get(i)));
+        }
+        for(int i=0; i<orig.getP2TopCards().size() ; i++)
+        {
+            this.p2TopCards.add(new Card(orig.getP2TopCards().get(i)));
+        }
+        for(int i=0; i<orig.getP3TopCards().size() ; i++)
+        {
+            this.p3TopCards.add(new Card(orig.getP3TopCards().get(i)));
+        }
+        for(int i=0; i<orig.getP4TopCards().size() ; i++)
+        {
+            this.p4TopCards.add(new Card(orig.getP4TopCards().get(i)));
+        }
+
+        for(int i=0; i<orig.getP1BottomCards().size() ; i++)
+        {
+            this.p1BottomCards.add(new Card(orig.getP1BottomCards().get(i)));
+        }
+        for(int i=0; i<orig.getP2BottomCards().size() ; i++)
+        {
+            this.p2BottomCards.add(new Card(orig.getP2BottomCards().get(i)));
+        }
+        for(int i=0; i<orig.getP3BottomCards().size() ; i++)
+        {
+            this.p3BottomCards.add(new Card(orig.getP3BottomCards().get(i)));
+        }
+        for(int i=0; i<orig.getP4BottomCards().size() ; i++)
+        {
+            this.p4BottomCards.add(new Card(orig.getP4BottomCards().get(i)));
+        }
+
+        for (int i=0; i<orig.getSelectedCards().size(); i++) {
+            this.selectedCards.add(new Card(orig.getSelectedCards().get(i)));
+        }
+
+        drawPileTopCard = new Card(orig.getDrawPileTopCard());
+        playPileTopCard = new Card(orig.getPlayPileTopCard());
+        playPileCards = orig.getPlayPileCards();
+
+        this.drawPileNumCards = orig.getDrawPileNumCards();
+        this.playPileNumCards = orig.getPlayPileNumCards();
+
+        Log.d("GameState","Gamestate successfully created.");
+    }
+
+    //getters and setters
+
     public ArrayList<Card> getSelectedCards() {
         return selectedCards;
     }
 
     public void setSelectedCards(ArrayList<Card> selectedCards) {
         this.selectedCards = new ArrayList<Card>(selectedCards);
-    }
-
-    public Boolean getCardSelected() {
-        return cardSelected;
-    }
-
-    public void setCardSelected(Boolean cardSelected) {
-        this.cardSelected = cardSelected;
     }
 
     public int getNumPlayers() {
@@ -171,7 +258,9 @@ public class GameState {
         this.p4numCards = p4numCards;
     }
 
-    public ArrayList<Card> getP1Hand() { return p1Hand; }
+    public ArrayList<Card> getP1Hand() {
+        return p1Hand;
+    }
 
     public void setP1Hand(ArrayList<Card> p1Hand) {
         this.p1Hand = new ArrayList<Card>(p1Hand);
@@ -321,6 +410,8 @@ public class GameState {
         this.playPileNumCards = playPileNumCards;
     }
 
+
+    //adders and removers
     public void addToPlayPile(Card add){
         playPileCards.add(add);
     }
@@ -437,99 +528,6 @@ public class GameState {
         selectedCards.remove(remove);
     }
 
-    public GameState (GameState orig)//copy constructor
-    {
-        this.numPlayers = orig.getNumPlayers();
-        this.p1numCards = orig.getP1numCards();
-        this.p2numCards = orig.getP2numCards();
-        this.p3numCards = orig.getP3numCards();
-        this.p4numCards = orig.getP4numCards();
-
-        this.p1Hand = new ArrayList<Card>();
-        this.p2Hand = new ArrayList<Card>();
-        this.p3Hand = new ArrayList<>(orig.getP3Hand().size());
-        this.p4Hand = new ArrayList<>(orig.getP4Hand().size());
-
-        this.p1TopCards = new ArrayList<Card>();
-        this.p2TopCards = new ArrayList<Card>();
-        this.p3TopCards = new ArrayList<>(orig.getP3TopCards().size());
-        this.p4TopCards = new ArrayList<>(orig.getP4TopCards().size());
-
-        this.p1BottomCards = new ArrayList<Card>();
-        this.p2BottomCards = new ArrayList<Card>();
-        this.p3BottomCards = new ArrayList<>(orig.getP3BottomCards().size());
-        this.p4BottomCards = new ArrayList<>(orig.getP4BottomCards().size());
-
-        this.selectedCards = new ArrayList<Card>(orig.getSelectedCards().size());
-
-        for(int i=0; i< orig.getP1Hand().size() ; i++)
-        {
-            this.p1Hand.add(new Card(orig.getP1Hand().get(i)));
-        }
-        for(int i=0; i<orig.getP2Hand().size() ; i++)
-        {
-            this.p2Hand.add(new Card(orig.getP2Hand().get(i)));
-        }
-        for(int i=0; i<orig.getP3Hand().size() ; i++)
-        {
-            this.p3Hand.add(new Card(orig.getP3Hand().get(i)));
-        }
-        for(int i=0; i<orig.getP4Hand().size() ; i++)
-        {
-            this.p4Hand.add(new Card(orig.getP4Hand().get(i)));
-        }
-
-        this.turn = orig.getTurn();
-
-        this.deck = new DeckOfCards(1, orig);
-
-        for(int i=0; i<orig.getP1TopCards().size() ; i++)
-        {
-            this.p1TopCards.add(new Card(orig.getP1TopCards().get(i)));
-        }
-        for(int i=0; i<orig.getP2TopCards().size() ; i++)
-        {
-            this.p2TopCards.add(new Card(orig.getP2TopCards().get(i)));
-        }
-        for(int i=0; i<orig.getP3TopCards().size() ; i++)
-        {
-            this.p3TopCards.add(new Card(orig.getP3TopCards().get(i)));
-        }
-        for(int i=0; i<orig.getP4TopCards().size() ; i++)
-        {
-            this.p4TopCards.add(new Card(orig.getP4TopCards().get(i)));
-        }
-
-        for(int i=0; i<orig.getP1BottomCards().size() ; i++)
-        {
-            this.p1BottomCards.add(new Card(orig.getP1BottomCards().get(i)));
-        }
-        for(int i=0; i<orig.getP2BottomCards().size() ; i++)
-        {
-            this.p2BottomCards.add(new Card(orig.getP2BottomCards().get(i)));
-        }
-        for(int i=0; i<orig.getP3BottomCards().size() ; i++)
-        {
-            this.p3BottomCards.add(new Card(orig.getP3BottomCards().get(i)));
-        }
-        for(int i=0; i<orig.getP4BottomCards().size() ; i++)
-        {
-            this.p4BottomCards.add(new Card(orig.getP4BottomCards().get(i)));
-        }
-
-        for (int i=0; i<orig.getSelectedCards().size(); i++) {
-            this.selectedCards.add(new Card(orig.getSelectedCards().get(i)));
-        }
-
-        drawPileTopCard = new Card(orig.getDrawPileTopCard());
-        playPileTopCard = new Card(orig.getPlayPileTopCard());
-        playPileCards = orig.getPlayPileCards();
-
-        this.drawPileNumCards = orig.getDrawPileNumCards();
-        this.playPileNumCards = orig.getPlayPileNumCards();
-
-        Log.d("GameState","Gamestate successfully created.");
-    }
 
     public String toString() {
         String ret =  "Number of Players: " + numPlayers + "\n" +
