@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                firstInstance.getP1Hand().get(0), firstInstance.getP1TopCards().get(0));
 
         //SelectedCardAction
-            // choose a random number between 0 and number of cards in P1 hand
+        // choose a random number between 0 and number of cards in P1 hand
         int randNum = (int)(Math.random()*(firstInstance.getP1numCards()) + 0);
         Card randomCard = firstInstance.getP1Hand().get(randNum); // get a random card from p1Hand
         selectCardAction = new SelectCardAction(); // initialize the global variable

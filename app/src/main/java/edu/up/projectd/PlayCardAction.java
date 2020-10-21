@@ -8,7 +8,7 @@ public class PlayCardAction {
         if (state.getTurn() != playerId) {//not a valid move if it is not that player's turn
             return false;
         }
-        else if (state.getCardSelected() == false) {//not a valid move if a card isn't selected
+        else if (state.getSelectedCards().isEmpty()) {//not a valid move if a card isn't selected
             return false;
         }
         else if (state.getSelectedCards().size() > 1) {//not a valid move if multiple cards are selected but not the same rank

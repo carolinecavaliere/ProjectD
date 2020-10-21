@@ -70,6 +70,8 @@ public class GameState {
         p3Hand = new ArrayList<Card>();
         p4Hand = new ArrayList<Card>();
 
+        selectedCards = new ArrayList<Card>();
+
         if(this.numPlayers<=2)
         {
             deck = new DeckOfCards(1, this);
@@ -459,6 +461,8 @@ public class GameState {
         this.p3BottomCards = new ArrayList<>(orig.getP3BottomCards().size());
         this.p4BottomCards = new ArrayList<>(orig.getP4BottomCards().size());
 
+        this.selectedCards = new ArrayList<Card>(orig.getSelectedCards().size());
+
         for(int i=0; i< orig.getP1Hand().size() ; i++)
         {
             this.p1Hand.add(new Card(orig.getP1Hand().get(i)));
@@ -512,6 +516,10 @@ public class GameState {
         for(int i=0; i<orig.getP4BottomCards().size() ; i++)
         {
             this.p4BottomCards.add(new Card(orig.getP4BottomCards().get(i)));
+        }
+
+        for (int i=0; i<orig.getSelectedCards().size(); i++) {
+            this.selectedCards.add(new Card(orig.getSelectedCards().get(i)));
         }
 
         drawPileTopCard = new Card(orig.getDrawPileTopCard());
