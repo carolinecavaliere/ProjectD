@@ -162,7 +162,7 @@ public class GameState {
 
         this.turn = orig.getTurn();
 
-        this.deck = new DeckOfCards(1, orig);
+        this.deck = new DeckOfCards(orig.deck);
 
         for(int i=0; i<orig.getP1TopCards().size() ; i++)
         {
