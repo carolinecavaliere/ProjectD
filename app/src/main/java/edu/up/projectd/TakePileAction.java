@@ -15,6 +15,7 @@ public class TakePileAction {
                     gameState.removeFromPlayPile(0);
                     gameState.setPlayPileNumCards(gameState.getPlayPileNumCards() - 1);
                 }
+                gameState.clearPlayPileCards();
                 return true;
             }
             else if (playerID == 2) {
