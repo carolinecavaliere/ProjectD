@@ -5,6 +5,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * @Author: Chloe Gan, Nathaniel Pon, Jimi Hayes, Caroline Cavaliere
+ */
 public class GameState {
 
     private int numPlayers;

@@ -10,8 +10,9 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
- * @Author: Chloe Gan
+ * @Author: Chloe Gan, Nathaniel Pon, Jimi Hayes, Caroline Cavaliere
  * Citation: https://www.youtube.com/watch?v=_AUtutrnEP8
+ * This class models the attributes of a Card
  */
 public class Card extends ArrayList<Card> {
     private int suit;

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
+/**
+ * @Author: Chloe Gan, Nathaniel Pon, Jimi Hayes, Caroline Cavaliere
+ * This class models a deck of cards and handles actions such as shuffling and dealing
+ * the deck(s)
+ */
 public class DeckOfCards {
     static ArrayList<Card> deck = new ArrayList<Card>();//actual array
     static GameState state;

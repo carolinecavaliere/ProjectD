@@ -3,6 +3,12 @@ package edu.up.projectd;
 
 import java.util.ArrayList;
 
+/**
+ * @Author: Chloe Gan, Nathaniel Pon, Jimi Hayes, Caroline Cavaliere
+ * This class models a player playing a card/cards to the play pile. It handles
+ * cases in which the player's selected card(s) cannot legally be played, and
+ * adds a new card to the player's hand when appropriate after they play a legal card(s)
+ */
 public class PlayCardAction {
     public boolean playCard(int playerId, GameState state) {
         if (state.getTurn() != playerId) {//not a valid move if it is not that player's turn
@@ -23,7 +29,7 @@ public class PlayCardAction {
                     state.removeFromP1Hand(state.getSelectedCards().get(i));
                     state.setPlayPileNumCards(state.getPlayPileNumCards() + 1);
                     state.setP1numCards(state.getP1numCards() - 1);
-                    if (state.getP1Hand().size() < 3) {
+                    if (state.getP1Hand().size() < 3) {//adds new card to the player's hand
                         for (int j = state.getP1numCards(); j < 3; j++) {
                             state.addToP1Hand(state.getDeck().getNextCard());
                         }

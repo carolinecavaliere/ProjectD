@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
 
+/**
+ * @Author: Chloe Gan, Nathaniel Pon, Jimi Hayes, Caroline Cavaliere
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public EditText text;

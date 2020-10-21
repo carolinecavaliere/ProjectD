@@ -2,6 +2,10 @@ package edu.up.projectd;
 
 import java.util.ArrayList;
 
+/**
+ * @Author: Chloe Gan, Nathaniel Pon, Jimi Hayes, Caroline Cavaliere
+ * This class models the instance in which the player chooses to or must take the play pile.
+ */
 public class TakePileAction {
 
     public boolean takePile(int playerID, GameState gameState) {
