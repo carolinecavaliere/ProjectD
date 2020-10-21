@@ -212,7 +212,6 @@ public class GameState {
     }
 
     //getters and setters
-
     public ArrayList<Card> getSelectedCards() {
         return selectedCards;
     }

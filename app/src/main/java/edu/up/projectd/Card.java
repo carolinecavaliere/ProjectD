@@ -87,8 +87,6 @@ public class Card extends ArrayList<Card> {
     public Card (Card orig) { // deep state constructor
         this.suit = orig.getSuit();
         this.rank = orig.getRank();
-
-
     }
 
     /**

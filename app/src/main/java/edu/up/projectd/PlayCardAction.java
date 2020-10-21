@@ -85,7 +85,6 @@ public class PlayCardAction {
                 return true;
             }
         }
-
         return false;
     }
 }
