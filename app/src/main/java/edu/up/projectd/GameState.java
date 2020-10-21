@@ -82,7 +82,7 @@ public class GameState {
         }
 
         //temp fix for dealDeck()
-        p1Hand.add(deck.getNextCard());
+        p1Hand.add(new Card(1,14)); //Assigned specific card to test purposes
         p1Hand.add(deck.getNextCard());
         p1Hand.add(deck.getNextCard());
         p1TopCards.add(deck.getNextCard());
@@ -170,9 +170,7 @@ public class GameState {
         this.p4numCards = p4numCards;
     }
 
-    public ArrayList<Card> getP1Hand() {
-        return p1Hand;
-    }
+    public ArrayList<Card> getP1Hand() { return p1Hand; }
 
     public void setP1Hand(ArrayList<Card> p1Hand) {
         this.p1Hand = new ArrayList<Card>(p1Hand);
